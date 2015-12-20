@@ -13,6 +13,7 @@ import android.support.v7.widget.AppCompatEditText;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.SeekBar;
@@ -33,6 +34,8 @@ class TintHelper {
             setTint((EditText) view, color);
         else if (view instanceof CheckBox)
             setTint((CheckBox) view, color);
+        else if (view instanceof ImageView)
+            setTint((ImageView) view, color);
         else
             throw new IllegalArgumentException("Tinting of view of type " + view.getClass().getName() + " is unsupported.");
     }
@@ -142,5 +145,9 @@ class TintHelper {
             DrawableCompat.setTintList(drawable, sl);
             box.setButtonDrawable(drawable);
         }
+    }
+
+    public static void setTint(@NonNull ImageView image, @ColorInt int color) {
+        image.setColorFilter(color, PorterDuff.Mode.SRC_ATOP);
     }
 }

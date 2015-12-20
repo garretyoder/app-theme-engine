@@ -271,7 +271,7 @@ You can only change the text color of a view that extends `TextView`, which incl
 
 ### Tint Colors
 
-You can tint `CheckBox`'s, `RadioButton`'s, `ProgressBar`'s, `EditText`'s, and `SeekBar`'s. 
+You can tint `CheckBox`'s, `RadioButton`'s, `ProgressBar`'s, `EditText`'s, `SeekBar`'s, and `ImageView`'s. 
 
 1. `tint_primary_color` - tints the view with the primary color.
 2. `tint_primary_color_dark` - tints the view with the primary dark color.
