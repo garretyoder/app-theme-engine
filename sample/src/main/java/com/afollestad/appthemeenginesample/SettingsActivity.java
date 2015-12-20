@@ -1,11 +1,13 @@
 package com.afollestad.appthemeenginesample;
 
 import android.annotation.SuppressLint;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceFragment;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.afollestad.appthemeengine.ATE;
@@ -23,7 +25,7 @@ public class SettingsActivity extends ATEActivity implements ColorChooserDialog.
     @Override
     public void onColorSelection(@NonNull ColorChooserDialog dialog, @ColorInt int selectedColor) {
         final Config config = ATE.config(this);
-        switch(dialog.getTitle()) {
+        switch (dialog.getTitle()) {
             case R.string.primary_color:
                 config.primaryColor(selectedColor);
                 break;
@@ -48,10 +50,8 @@ public class SettingsActivity extends ATEActivity implements ColorChooserDialog.
             super.onCreate(savedInstanceState);
             addPreferencesFromResource(R.xml.preferences);
 
-            final int accentColor = Config.accentColor(getActivity());
-
             ATEColorPreference primaryColorPref = (ATEColorPreference) findPreference("primary_color");
-            primaryColorPref.setColor(Config.primaryColor(getActivity()), accentColor);
+            primaryColorPref.setColor(Config.primaryColor(getActivity()), Color.BLACK);
             primaryColorPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -63,7 +63,7 @@ public class SettingsActivity extends ATEActivity implements ColorChooserDialog.
             });
 
             ATEColorPreference accentColorPref = (ATEColorPreference) findPreference("accent_color");
-            accentColorPref.setColor(Config.accentColor(getActivity()), accentColor);
+            accentColorPref.setColor(Config.accentColor(getActivity()), Color.BLACK);
             accentColorPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -75,7 +75,7 @@ public class SettingsActivity extends ATEActivity implements ColorChooserDialog.
             });
 
             ATEColorPreference textColorPrimaryPref = (ATEColorPreference) findPreference("text_primary");
-            textColorPrimaryPref.setColor(Config.textColorPrimary(getActivity()), accentColor);
+            textColorPrimaryPref.setColor(Config.textColorPrimary(getActivity()), Color.BLACK);
             textColorPrimaryPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -87,7 +87,7 @@ public class SettingsActivity extends ATEActivity implements ColorChooserDialog.
             });
 
             ATEColorPreference textColorSecondaryPref = (ATEColorPreference) findPreference("text_secondary");
-            textColorSecondaryPref.setColor(Config.textColorSecondary(getActivity()), accentColor);
+            textColorSecondaryPref.setColor(Config.textColorSecondary(getActivity()), Color.BLACK);
             textColorSecondaryPref.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
                 @Override
                 public boolean onPreferenceClick(Preference preference) {
@@ -120,17 +120,18 @@ public class SettingsActivity extends ATEActivity implements ColorChooserDialog.
         }
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.preference_activity_custom);
-        //noinspection ConstantConditions
+
+        setSupportActionBar((Toolbar) findViewById(R.id.appbar_toolbar));
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         if (savedInstanceState == null)
             getFragmentManager().beginTransaction().replace(R.id.content_frame, new SettingsFragment()).commit();
     }
-
 
 
     @Override

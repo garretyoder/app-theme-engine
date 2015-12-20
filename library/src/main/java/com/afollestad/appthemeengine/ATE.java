@@ -149,7 +149,8 @@ public final class ATE {
     }
 
     public static void apply(@NonNull Context context, @NonNull View view) {
-        processTag(context, view);
+        if (view.getTag() != null)
+            processTag(context, view);
         if (view instanceof ViewGroup)
             apply(context, (ViewGroup) view);
     }
