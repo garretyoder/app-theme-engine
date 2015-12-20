@@ -145,7 +145,7 @@ in order to pass a value in the format `R.color.resourceValue` or `R.attr.attrib
 
 # Tags
 
-As a recap, tags are applied to views like this:
+If you haven't used tags before, they can be applied to views directly from your XML layouts:
 
 ```xml
 <View
