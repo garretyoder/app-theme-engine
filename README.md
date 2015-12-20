@@ -118,6 +118,9 @@ public class MyFragment extends Fragment {
 By default, Android app themes are static. They cannot be changed dynamically after an APK is built. This 
 library allows you to dynamically change theme colors at runtime.
 
+All configuration options are persisted using SharedPreferences, meaning once you set them, you don't have 
+to set them again unless you want the value to be changed from what it was previously.
+
 Here are a few configuration methods that can be used:
 
 ```java
@@ -134,11 +137,19 @@ ATE.config(this) // context
     .apply(this); // activity, fragment, or view
 ```
 
-The names of the configuration options should be self-explanatory.
-
 There's also color resource and color attribute variations of the color modifiers. For an example: 
 rather than using `primaryColor(int)`, you could use `primaryColorRes(int)` or `primaryColorAttr(int)` 
 in order to pass a value in the format `R.color.resourceValue` or `R.attr.attributeValue`.
+
+---
+
+If you want to setup a default configuration the first time your app is run, you can use code like this:
+
+```java
+if (!ATE.config(this).isConfigured()) {
+    // Setup default options
+}
+```
 
 ---
 
@@ -154,7 +165,7 @@ If you haven't used tags before, they can be applied to views directly from your
     />
 ```
 
-The theme engine allows you to apply theme colors to any view using tags. **You can even use multiple tags, separated by commas:
+The theme engine allows you to apply theme colors to any view using tags. **You can even use multiple tags, separated by commas**:
 
 ```xml
 <View
