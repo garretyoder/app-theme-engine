@@ -83,6 +83,8 @@ If you don't use `ATEActivity`, there's a few things you have to do:
 ```java
 public class MyActivity extends AppCompatActivity {
 
+    private long updateTime = -1;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         ATE.preApply(this); // apply primary color to status bar and nav bar
@@ -93,7 +95,7 @@ public class MyActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        if (ATE.didValuesChange())
+        if (ATE.didValuesChange(this, updateTime))
             recreate();
     }
 }

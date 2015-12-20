@@ -9,7 +9,6 @@ import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.NonNull;
 import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 /**
@@ -19,6 +18,7 @@ public final class Config {
 
     private final static String CONFIG_PREFS_KEY = "[[afollestad_app-theme-engine]]";
     private final static String IS_CONFIGURED_KEY = "is_configured";
+    protected final static String VALUES_CHANGED = "values_changed";
 
     private final static String KEY_PRIMARY_COLOR = "primary_color";
     private final static String KEY_PRIMARY_COLOR_DARK = "primary_color_dark";
@@ -134,9 +134,9 @@ public final class Config {
     }
 
     public void commit() {
-        if (mContext instanceof Activity)
-            ATE.didValuesChange = true;
-        mEditor.putBoolean(IS_CONFIGURED_KEY, true).commit();
+        mEditor.putLong(VALUES_CHANGED, System.currentTimeMillis())
+                .putBoolean(IS_CONFIGURED_KEY, true)
+                .commit();
     }
 
     public void apply(@NonNull Activity activity) {
@@ -160,7 +160,7 @@ public final class Config {
     }
 
     @NonNull
-    private static SharedPreferences prefs(@NonNull Context context) {
+    protected static SharedPreferences prefs(@NonNull Context context) {
         return context.getSharedPreferences(CONFIG_PREFS_KEY, Context.MODE_PRIVATE);
     }
 

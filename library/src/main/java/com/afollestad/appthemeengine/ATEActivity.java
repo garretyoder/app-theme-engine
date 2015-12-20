@@ -8,17 +8,20 @@ import android.support.v7.app.AppCompatActivity;
  */
 public class ATEActivity extends AppCompatActivity {
 
+    private long updateTime = -1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         ATE.preApply(this);
         super.onCreate(savedInstanceState);
         ATE.apply(this);
+        updateTime = System.currentTimeMillis();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        if (ATE.didValuesChange())
+        if (ATE.didValuesChange(this, updateTime))
             recreate();
     }
 }

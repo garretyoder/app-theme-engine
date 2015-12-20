@@ -39,7 +39,6 @@ public final class ATE {
     private final static String KEY_TINT_TEXT_SECONDARY = "tint_text_secondary";
 
     private static Class<?> didPreApply = null;
-    protected static boolean didValuesChange = false;
 
     private static void processTagPart(@NonNull Context context, @NonNull View current, @NonNull String tag) {
         switch (tag) {
@@ -122,13 +121,12 @@ public final class ATE {
         return new Config(context);
     }
 
-    public static boolean didValuesChange() {
-        return didValuesChange;
+    public static boolean didValuesChange(@NonNull Context context, long updateTime) {
+        return Config.prefs(context).getLong(Config.VALUES_CHANGED, -1) > updateTime;
     }
 
     public static void preApply(@NonNull Activity activity) {
         didPreApply = activity.getClass();
-        didValuesChange = false;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final Window window = activity.getWindow();
             if (Config.coloredStatusBar(activity))
@@ -168,12 +166,10 @@ public final class ATE {
         }
         final ViewGroup rootView = (ViewGroup) activity.getWindow().getDecorView().getRootView();
         apply(activity, rootView);
-        didValuesChange = false;
         didPreApply = null;
     }
 
     public static void apply(@NonNull android.support.v4.app.Fragment fragment) {
-        didValuesChange = false;
         if (fragment.getActivity() == null)
             throw new IllegalStateException("Fragment is not attached to an Activity yet.");
         else if (fragment.getView() == null)
@@ -184,7 +180,6 @@ public final class ATE {
     }
 
     public static void apply(@NonNull android.app.Fragment fragment) {
-        didValuesChange = false;
         if (fragment.getActivity() == null)
             throw new IllegalStateException("Fragment is not attached to an Activity yet.");
         else if (fragment.getView() == null)
