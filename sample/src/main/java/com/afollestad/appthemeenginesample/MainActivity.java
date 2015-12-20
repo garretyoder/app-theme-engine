@@ -23,6 +23,8 @@ public class MainActivity extends ATEActivity implements ColorChooserDialog.Colo
         setContentView(R.layout.activity_main);
 
         final Toolbar toolbar = (Toolbar) findViewById(R.id.appbar_toolbar);
+        toolbar.setTitle(R.string.app_name);
+        toolbar.setNavigationIcon(R.drawable.ic_menu);
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.setDrawerListener(new ActionBarDrawerToggle(this, drawer, toolbar, R.string.drawer_open, R.string.drawer_close));
     }

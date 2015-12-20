@@ -1,6 +1,7 @@
 <resources>
 
     <dimen name="content_inset">16dp</dimen>
+    <dimen name="drawer_header_height">196dp</dimen>
 
     <dimen name="header_text_size">22sp</dimen>
     <dimen name="body_text_size">16sp</dimen>
