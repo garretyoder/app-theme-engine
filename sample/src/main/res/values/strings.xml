@@ -31,4 +31,15 @@
     <string name="drawer_close">Close nav drawer</string>
     <string name="drawer_open">Open nav drawer</string>
 
+    <string name="about">About</string>
+    <string name="about_body"><![CDATA[
+        app-theme-engine, a library  designed by <b>Aidan Follestad</b>.<br/>
+        <a href=\'http://aidanfollestad.com\'>Website</a>&nbsp;&nbsp;
+        <a href=\'https://twitter.com/afollestad\'>Twitter</a>&nbsp;&nbsp;
+        <a href=\'https://google.com/+AidanFollestad\'>Google+</a>&nbsp;&nbsp;
+        <a href=\'https://github.com/afollestad\'>GitHub</a>&nbsp;&nbsp;
+        <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
+    ]]></string>
+    <string name="dismiss">Dismiss</string>
+
 </resources>

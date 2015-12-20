@@ -149,11 +149,9 @@ public final class ATE {
     }
 
     public static void apply(@NonNull Context context, @NonNull View view) {
-        if (view instanceof ViewGroup) {
+        processTag(context, view);
+        if (view instanceof ViewGroup)
             apply(context, (ViewGroup) view);
-        } else {
-            processTag(context, view);
-        }
     }
 
     public static void apply(@NonNull Activity activity) {

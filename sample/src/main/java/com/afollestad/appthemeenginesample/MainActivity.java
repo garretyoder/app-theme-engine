@@ -1,11 +1,14 @@
 package com.afollestad.appthemeenginesample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 
 import com.afollestad.appthemeengine.ATE;
 import com.afollestad.appthemeengine.ATEActivity;
@@ -13,6 +16,8 @@ import com.afollestad.appthemeengine.Config;
 import com.afollestad.materialdialogs.color.ColorChooserDialog;
 
 public class MainActivity extends ATEActivity implements ColorChooserDialog.ColorCallback {
+
+    private DrawerLayout mDrawer;
 
     @SuppressWarnings("ConstantConditions")
     @Override
@@ -25,8 +30,37 @@ public class MainActivity extends ATEActivity implements ColorChooserDialog.Colo
         final Toolbar toolbar = (Toolbar) findViewById(R.id.appbar_toolbar);
         toolbar.setTitle(R.string.app_name);
         toolbar.setNavigationIcon(R.drawable.ic_menu);
-        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        drawer.setDrawerListener(new ActionBarDrawerToggle(this, drawer, toolbar, R.string.drawer_open, R.string.drawer_close));
+
+        mDrawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawer.setDrawerListener(new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.drawer_open, R.string.drawer_close));
+
+        final NavigationView navView = (NavigationView) findViewById(R.id.navigation_view);
+        navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem item) {
+                mDrawer.closeDrawers();
+                if (item.getItemId() == R.id.settings) {
+                    post(new Runnable() {
+                        @Override
+                        public void run() {
+                            startActivity(new Intent(MainActivity.this, SettingsActivity.class));
+                        }
+                    });
+                } else if (item.getItemId() == R.id.about) {
+                    post(new Runnable() {
+                        @Override
+                        public void run() {
+                            AboutDialog.show(MainActivity.this);
+                        }
+                    });
+                }
+                return true;
+            }
+        });
+    }
+
+    private void post(Runnable runnable) {
+        mDrawer.postDelayed(runnable, 200);
     }
 
     @Override
