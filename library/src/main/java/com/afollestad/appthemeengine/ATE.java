@@ -1,5 +1,6 @@
 package com.afollestad.appthemeengine;
 
+import android.app.Activity;
 import android.content.Context;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -125,15 +126,17 @@ public final class ATE {
         return didValuesChange;
     }
 
-    public static void preApply(@NonNull AppCompatActivity activity) {
+    public static void preApply(@NonNull Activity activity) {
         didPreApply = activity.getClass();
         didValuesChange = false;
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final Window window = activity.getWindow();
-            if (Config.applyPrimaryDarkStatusBar(activity))
+            if (Config.coloredStatusBar(activity))
                 window.setStatusBarColor(Config.primaryColorDark(activity));
-            if (Config.applyPrimaryNavBar(activity))
+            else window.setStatusBarColor(Color.BLACK);
+            if (Config.coloredNavigationBar(activity))
                 window.setNavigationBarColor(Config.primaryColor(activity));
+            else window.setNavigationBarColor(Color.BLACK);
         }
     }
 
@@ -145,11 +148,18 @@ public final class ATE {
         }
     }
 
-    public static void apply(@NonNull AppCompatActivity activity) {
+    public static void apply(@NonNull Activity activity) {
         if (didPreApply == null)
             preApply(activity);
-        if (Config.applyPrimarySupportAb(activity) && activity.getSupportActionBar() != null)
-            activity.getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Config.primaryColor(activity)));
+        if (Config.coloredActionBar(activity)) {
+            if (activity instanceof AppCompatActivity) {
+                final AppCompatActivity aca = (AppCompatActivity) activity;
+                if (aca.getSupportActionBar() != null)
+                    aca.getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Config.primaryColor(activity)));
+            } else if (activity.getActionBar() != null) {
+                activity.getActionBar().setBackgroundDrawable(new ColorDrawable(Config.primaryColor(activity)));
+            }
+        }
         final ViewGroup rootView = (ViewGroup) activity.getWindow().getDecorView().getRootView();
         apply(activity, rootView);
         didValuesChange = false;
@@ -164,7 +174,7 @@ public final class ATE {
             throw new IllegalStateException("Fragment does not have a View yet.");
         apply(fragment.getActivity(), (ViewGroup) fragment.getView());
         if (fragment.getActivity() instanceof AppCompatActivity)
-            apply((AppCompatActivity) fragment.getActivity());
+            apply(fragment.getActivity());
     }
 
     public static void apply(@NonNull android.app.Fragment fragment) {
@@ -175,7 +185,7 @@ public final class ATE {
             throw new IllegalStateException("Fragment does not have a View yet.");
         apply(fragment.getActivity(), (ViewGroup) fragment.getView());
         if (fragment.getActivity() instanceof AppCompatActivity)
-            apply((AppCompatActivity) fragment.getActivity());
+            apply(fragment.getActivity());
     }
 
     @ColorInt

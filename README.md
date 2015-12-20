@@ -129,9 +129,10 @@ ATE.config(this) // context
     .accentColor(color)
     .textColorPrimary(color)
     .textColorSecondary(color)
-    .applyPrimaryDarkStatusBar(true)
-    .applyPrimarySupportAb(true)
-    .applyPrimaryNavBar(false)
+    .coloredStatusBar(true)
+    .coloredActionBar(true)
+    .coloredNavigationBar(false)
+    .autoGeneratePrimaryDark(true)
     .apply(this); // activity, fragment, or view
 ```
 

@@ -1,37 +1,45 @@
 package com.afollestad.appthemeenginesample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuItem;
 
 import com.afollestad.appthemeengine.ATE;
 import com.afollestad.appthemeengine.ATEActivity;
 import com.afollestad.appthemeengine.Config;
 import com.afollestad.materialdialogs.color.ColorChooserDialog;
 
-public class MainActivity extends ATEActivity
-        implements View.OnClickListener, ColorChooserDialog.ColorCallback {
+public class MainActivity extends ATEActivity implements ColorChooserDialog.ColorCallback {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ATE.config(this)
-                .applyPrimaryNavBar(true);
-
-        findViewById(R.id.changePrimaryColor).setOnClickListener(this);
-        findViewById(R.id.changeAccentColor).setOnClickListener(this);
+        if (!ATE.config(this).isConfigured()) {
+            ATE.config(this).coloredNavigationBar(true);
+        }
     }
 
     @Override
-    public void onClick(View v) {
-        int titleRes = v.getId() == R.id.changePrimaryColor ?
-                R.string.change_primary_color : R.string.change_accent_color;
-        new ColorChooserDialog.Builder(this, titleRes)
-                .accentMode(v.getId() == R.id.changeAccentColor)
-                .show();
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            onBackPressed();
+            return true;
+        } else if (item.getItemId() == R.id.settings) {
+            startActivity(new Intent(this, SettingsActivity.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     @Override
@@ -40,8 +48,7 @@ public class MainActivity extends ATEActivity
         if (dialog.isAccentMode()) {
             config.accentColor(selectedColor);
         } else {
-            config.primaryColor(selectedColor)
-                    .primaryColorDark(ATE.darkenColor(selectedColor));
+            config.primaryColor(selectedColor);
         }
         config.apply(this);
     }

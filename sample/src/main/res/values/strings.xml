@@ -1,10 +1,30 @@
 <resources>
-    <string name="app_name">app-theme-engine</string>
+
+    <string name="app_name">ATE Sample</string>
+    <string name="settings">Settings</string>
+
     <string name="header">Header</string>
     <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel nisl vel eros accumsan lacinia. Pellentesque vel tellus vitae purus interdum sagittis. Pellentesque vehicula odio ac nibh bibendum suscipit.</string>
     <string name="checkbox">Checkbox</string>
     <string name="radiobutton">Ratio Button</string>
     <string name="edit_text">Input field</string>
-    <string name="change_primary_color">Change Primary Color</string>
-    <string name="change_accent_color">Change Accent Color</string>
+
+    <string name="primary_color">Primary Color</string>
+    <string name="primary_color_summary">Change the primary theme color</string>
+
+    <string name="accent_color">Accent Color</string>
+    <string name="accent_color_summary">Change the accent theme color</string>
+
+    <string name="primary_text_color">Primary Text Color</string>
+    <string name="primary_text_color_summary">Change the primary text color</string>
+
+    <string name="secondary_text_color">Secondary Text Color</string>
+    <string name="secondary_text_color_summary">Change the secondary text color</string>
+
+    <string name="colored_status_bar">Colored Status Bar</string>
+    <string name="colored_status_bar_summary">Toggle status bar coloring</string>
+
+    <string name="colored_nav_bar">Colored Navigation Bar</string>
+    <string name="colored_nav_bar_summary">Toggle navigation bar coloring</string>
+
 </resources>

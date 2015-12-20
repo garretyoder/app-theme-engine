@@ -14,27 +14,6 @@
         android:paddingTop="@dimen/content_inset"
         tools:ignore="UnusedAttribute">
 
-        <Button
-            android:id="@+id/changePrimaryColor"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/button_height"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/change_primary_color" />
-
-        <Button
-            android:id="@+id/changeAccentColor"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/button_height"
-            android:layout_gravity="center_horizontal"
-            android:text="@string/change_accent_color" />
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_marginBottom="@dimen/content_inset"
-            android:layout_marginTop="@dimen/content_inset"
-            android:background="@color/divider" />
-
         <com.afollestad.appthemeengine.views.ATEPrimaryTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

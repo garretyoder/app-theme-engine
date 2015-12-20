@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <com.afollestad.appthemeenginesample.prefs.ColorPreference
+        android:key="primary_color"
+        android:persistent="false"
+        android:summary="@string/primary_color_summary"
+        android:title="@string/primary_color" />
+
+    <com.afollestad.appthemeenginesample.prefs.ColorPreference
+        android:key="accent_color"
+        android:persistent="false"
+        android:summary="@string/accent_color_summary"
+        android:title="@string/accent_color" />
+
+    <com.afollestad.appthemeenginesample.prefs.ColorPreference
+        android:key="text_primary"
+        android:persistent="false"
+        android:summary="@string/primary_text_color_summary"
+        android:title="@string/primary_text_color" />
+
+    <com.afollestad.appthemeenginesample.prefs.ColorPreference
+        android:key="text_secondary"
+        android:persistent="false"
+        android:summary="@string/secondary_text_color_summary"
+        android:title="@string/secondary_text_color" />
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="colored_status_bar"
+        android:layout="@layout/preference_custom"
+        android:persistent="true"
+        android:summary="@string/colored_status_bar_summary"
+        android:title="@string/colored_status_bar"
+        android:widgetLayout="@layout/preference_dynamiccheckbox" />
+
+    <CheckBoxPreference
+        android:defaultValue="true"
+        android:key="colored_nav_bar"
+        android:layout="@layout/preference_custom"
+        android:persistent="true"
+        android:summary="@string/colored_nav_bar_summary"
+        android:title="@string/colored_nav_bar"
+        android:widgetLayout="@layout/preference_dynamiccheckbox" />
+
+</PreferenceScreen>
