@@ -35,6 +35,7 @@ public class MainActivity extends ATEActivity implements ColorChooserDialog.Colo
         mDrawer.setDrawerListener(new ActionBarDrawerToggle(this, mDrawer, toolbar, R.string.drawer_open, R.string.drawer_close));
 
         final NavigationView navView = (NavigationView) findViewById(R.id.navigation_view);
+        navView.setCheckedItem(R.id.home);
         navView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(MenuItem item) {

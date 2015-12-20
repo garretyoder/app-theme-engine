@@ -2,12 +2,14 @@ package com.afollestad.appthemeengine;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.annotation.ColorInt;
 import android.support.annotation.FloatRange;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -93,6 +95,29 @@ public final class ATE {
         }
     }
 
+    private static void processNavigationView(@NonNull NavigationView view) {
+        final ColorStateList iconSl = new ColorStateList(
+                new int[][]{
+                        new int[]{-android.R.attr.state_checked},
+                        new int[]{android.R.attr.state_checked}
+                },
+                new int[]{
+                        Config.textColorSecondary(view.getContext()),
+                        Config.accentColor(view.getContext())
+                });
+        final ColorStateList textSl = new ColorStateList(
+                new int[][]{
+                        new int[]{-android.R.attr.state_checked},
+                        new int[]{android.R.attr.state_checked}
+                },
+                new int[]{
+                        Config.textColorPrimary(view.getContext()),
+                        Config.accentColor(view.getContext())
+                });
+        view.setItemTextColor(textSl);
+        view.setItemIconTintList(iconSl);
+    }
+
     private static void processTag(@NonNull Context context, @NonNull View current) {
         final String tag = (String) current.getTag();
         if (tag.contains(",")) {
@@ -108,7 +133,9 @@ public final class ATE {
         final long start = System.currentTimeMillis();
         for (int i = 0; i < view.getChildCount(); i++) {
             final View current = view.getChildAt(i);
-            if (current.getTag() != null && current.getTag() instanceof String) {
+            if (current instanceof NavigationView) {
+                processNavigationView((NavigationView) current);
+            } else if (current.getTag() != null && current.getTag() instanceof String) {
                 Log.d("ATE", "Processed view: " + current.getClass().getName());
                 processTag(context, current);
             }
