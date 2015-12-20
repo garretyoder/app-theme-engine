@@ -1,5 +1,3 @@
-## This library is not published yet, it will be when it's gone through testing.
-
 # App Theme Engine
 
 App Theme Engine is a library that makes it easy for developers to implement a theme system in 
