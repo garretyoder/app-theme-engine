@@ -135,10 +135,11 @@ ATE.config(this) // context
     .apply(this); // activity, fragment, or view
 ```
 
-You can add `res` to then end of any color configuration methods to pass a color resource instead of a 
-literal color integer.
-
 The names of the configuration options should be self-explanatory.
+
+There's also color resource and color attribute variations of the color modifiers. For an example: 
+rather than using `primaryColor(int)`, you could use `primaryColorRes(int)` or `primaryColorAttr(int)` 
+in order to pass a value in the format `R.color.resourceValue` or `R.attr.attributeValue`.
 
 ---
 

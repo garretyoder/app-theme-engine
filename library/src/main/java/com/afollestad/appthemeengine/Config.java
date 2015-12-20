@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.support.annotation.AttrRes;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
 import android.support.annotation.NonNull;
@@ -47,6 +48,10 @@ public final class Config {
         return primaryColor(ContextCompat.getColor(mContext, colorRes));
     }
 
+    public Config primaryColorAttr(@AttrRes int colorAttr) {
+        return primaryColor(Util.resolveColor(mContext, colorAttr));
+    }
+
     public Config primaryColorDark(@ColorInt int color) {
         mEditor.putInt(KEY_PRIMARY_COLOR_DARK, color);
         return this;
@@ -54,6 +59,10 @@ public final class Config {
 
     public Config primaryColorDarkRes(@ColorRes int colorRes) {
         return primaryColorDark(ContextCompat.getColor(mContext, colorRes));
+    }
+
+    public Config primaryColorDarkAttr(@AttrRes int colorAttr) {
+        return primaryColorDark(Util.resolveColor(mContext, colorAttr));
     }
 
     public Config accentColor(@ColorInt int color) {
@@ -65,6 +74,10 @@ public final class Config {
         return accentColor(ContextCompat.getColor(mContext, colorRes));
     }
 
+    public Config accentColorAttr(@AttrRes int colorAttr) {
+        return accentColor(Util.resolveColor(mContext, colorAttr));
+    }
+
     public Config textColorPrimary(@ColorInt int color) {
         mEditor.putInt(KEY_TEXT_COLOR_PRIMARY, color);
         return this;
@@ -72,6 +85,10 @@ public final class Config {
 
     public Config textColorPrimaryRes(@ColorRes int colorRes) {
         return textColorPrimary(ContextCompat.getColor(mContext, colorRes));
+    }
+
+    public Config textColorPrimaryAttr(@AttrRes int colorAttr) {
+        return textColorPrimary(Util.resolveColor(mContext, colorAttr));
     }
 
     public Config textColorSecondary(@ColorInt int color) {
@@ -83,18 +100,22 @@ public final class Config {
         return textColorSecondary(ContextCompat.getColor(mContext, colorRes));
     }
 
+    public Config textColorSecondaryAttr(@AttrRes int colorAttr) {
+        return textColorSecondary(Util.resolveColor(mContext, colorAttr));
+    }
+
     public Config applyPrimaryDarkStatusBar(boolean applyToStatusBar) {
         mEditor.putBoolean(KEY_APPLY_PRIMARYDARK_STATUSBAR, applyToStatusBar);
         return this;
     }
 
-    public Config applyPrimarySupportAb(boolean applyToStatusBar) {
-        mEditor.putBoolean(KEY_APPLY_PRIMARY_SUPPORTAB, applyToStatusBar);
+    public Config applyPrimarySupportAb(boolean applyToActionBar) {
+        mEditor.putBoolean(KEY_APPLY_PRIMARY_SUPPORTAB, applyToActionBar);
         return this;
     }
 
-    public Config applyPrimaryNavBar(boolean applyToStatusBar) {
-        mEditor.putBoolean(KEY_APPLY_PRIMARY_NAVBAR, applyToStatusBar);
+    public Config applyPrimaryNavBar(boolean applyToNavBar) {
+        mEditor.putBoolean(KEY_APPLY_PRIMARY_NAVBAR, applyToNavBar);
         return this;
     }
 

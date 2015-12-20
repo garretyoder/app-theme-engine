@@ -18,6 +18,9 @@ public class MainActivity extends ATEActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        ATE.config(this)
+                .applyPrimaryNavBar(true);
+
         findViewById(R.id.changePrimaryColor).setOnClickListener(this);
         findViewById(R.id.changeAccentColor).setOnClickListener(this);
     }
