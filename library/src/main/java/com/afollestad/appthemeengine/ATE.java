@@ -221,8 +221,11 @@ public final class ATE {
 
         final ViewGroup rootView = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
         if (rootView instanceof DrawerLayout) {
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
-                activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                final int color = Config.coloredStatusBar(activity) ?
+                        Color.TRANSPARENT : Color.BLACK;
+                activity.getWindow().setStatusBarColor(color);
+            }
             if (Config.coloredStatusBar(activity))
                 ((DrawerLayout) rootView).setStatusBarBackgroundColor(Config.primaryColorDark(activity));
         }
