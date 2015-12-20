@@ -35,6 +35,12 @@ public final class ATE {
     private final static String KEY_TEXT_PRIMARY = "text_primary";
     private final static String KEY_TEXT_SECONDARY = "text_secondary";
 
+    private final static String KEY_TEXTLINK_PRIMARY_COLOR = "text_link_primary_color";
+    private final static String KEY_TEXTLINK_PRIMARY_COLOR_DARK = "text_link_primary_color_dark";
+    private final static String KEY_TEXTLINK_ACCENT_COLOR = "text_link_accent_color";
+    private final static String KEY_TEXTLINK_PRIMARY = "text_link_primary";
+    private final static String KEY_TEXTLINK_SECONDARY = "text_link_secondary";
+
     private final static String KEY_TINT_PRIMARY_COLOR = "tint_primary_color";
     private final static String KEY_TINT_PRIMARY_COLOR_DARK = "tint_primary_color_dark";
     private final static String KEY_TINT_ACCENT_COLOR = "tint_accent_color";
@@ -75,6 +81,22 @@ public final class ATE {
                 break;
             case KEY_TEXT_SECONDARY:
                 ((TextView) current).setTextColor(Config.textColorSecondary(context));
+                break;
+
+            case KEY_TEXTLINK_PRIMARY_COLOR:
+                ((TextView) current).setLinkTextColor(Config.primaryColor(context));
+                break;
+            case KEY_TEXTLINK_PRIMARY_COLOR_DARK:
+                ((TextView) current).setLinkTextColor(Config.primaryColorDark(context));
+                break;
+            case KEY_TEXTLINK_ACCENT_COLOR:
+                ((TextView) current).setLinkTextColor(Config.accentColor(context));
+                break;
+            case KEY_TEXTLINK_PRIMARY:
+                ((TextView) current).setLinkTextColor(Config.textColorPrimary(context));
+                break;
+            case KEY_TEXTLINK_SECONDARY:
+                ((TextView) current).setLinkTextColor(Config.textColorSecondary(context));
                 break;
 
             case KEY_TINT_PRIMARY_COLOR:

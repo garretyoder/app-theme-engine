@@ -51,11 +51,11 @@ public class MainActivity extends ATEActivity implements ColorChooserDialog.Colo
                     post(new Runnable() {
                         @Override
                         public void run() {
-                            AboutDialog.show(MainActivity.this);
+                            AccentAboutDialog.show(MainActivity.this);
                         }
                     });
                 }
-                return true;
+                return false;
             }
         });
     }

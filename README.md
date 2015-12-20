@@ -237,6 +237,14 @@ if (!ATE.config(this).isConfigured()) {
 
 ---
 
+Using the `Config` class, you can retrieve your set theme values. For an example:
+
+```java
+int primaryColor = Config.primaryColor(this);
+```
+
+---
+
 # Tags
 
 If you haven't used tags before, they can be applied to views directly from your XML layouts:
@@ -280,6 +288,16 @@ You can only change the text color of a view that extends `TextView`, which incl
 3. `text_accent_color` - sets the text color to the accent color.
 4. `text_primary` - sets the text color to the primary text color.
 5. `text_secondary` - sets the text color to the secondary text color.
+
+### Text Link Colors
+
+This should only really be needed on `TextView'`s, it changes the color of links when TextViews are linkable.
+
+1. `text_link_primary_color` - sets the link text color to the primary color.
+2. `text_link_primary_color_dark` - sets the link text color to the primary dark color.
+3. `text_link_accent_color` - sets the link text color to the accent color.
+4. `text_link_primary` - sets the link text color to the primary text color.
+5. `text_link_secondary` - sets the link text color to the secondary text color. 
 
 ### Tint Colors
 
