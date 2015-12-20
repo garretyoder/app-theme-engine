@@ -5,26 +5,27 @@ import android.preference.Preference;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.afollestad.appthemeengine.ATE;
 import com.afollestad.appthemeenginesample.R;
 
 /**
  * @author Aidan Follestad (afollestad)
  */
-public class ColorPreference extends Preference {
+public class ATEColorPreference extends Preference {
 
     private View mView;
     private int color;
     private int border;
 
-    public ColorPreference(Context context, AttributeSet attrs) {
+    public ATEColorPreference(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public ColorPreference(Context context) {
+    public ATEColorPreference(Context context) {
         this(context, null, 0);
     }
 
-    public ColorPreference(Context context, AttributeSet attrs, int defStyleAttr) {
+    public ATEColorPreference(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         setLayoutResource(R.layout.preference_custom);
     }
@@ -33,6 +34,7 @@ public class ColorPreference extends Preference {
     protected void onBindView(View view) {
         super.onBindView(view);
         mView = view;
+        ATE.apply(view.getContext(), view);
         invalidateColor();
     }
 

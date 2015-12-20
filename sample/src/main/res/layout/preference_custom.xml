@@ -40,6 +40,7 @@
             android:fadingEdge="horizontal"
             android:gravity="start"
             android:singleLine="true"
+            android:tag="text_primary"
             android:textColor="?android:textColorPrimary"
             android:textSize="16sp"
             tools:text="Title" />
@@ -51,6 +52,7 @@
             android:layout_marginTop="2dp"
             android:gravity="start"
             android:maxLines="6"
+            android:tag="text_secondary"
             android:textColor="?android:textColorSecondary"
             android:textSize="14sp"
             tools:text="Bacon ipsum dolor amet rump tongue salami chicken. Boudin prosciutto andouille chuck ball tip biltong brisket shoulder turducken. Pig doner bacon drumstick." />
