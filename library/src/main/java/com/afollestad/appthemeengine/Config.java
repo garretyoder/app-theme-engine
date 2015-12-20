@@ -32,6 +32,12 @@ public final class Config {
     private final static String KEY_APPLY_PRIMARY_NAVBAR = "apply_primary_navbar";
     private final static String KEY_AUTO_GENERATE_PRIMARYDARK = "auto_generate_primarydark";
 
+    private final static String KEY_THEMED_NAVIGATION_VIEW = "apply_navigation_view";
+    private final static String KEY_NAVIGATIONVIEW_SELECTED_TEXT = "navigation_view_selected_text";
+    private final static String KEY_NAVIGATIONVIEW_NORMAL_TEXT = "navigation_view_normal_text";
+    private final static String KEY_NAVIGATIONVIEW_SELECTED_ICON = "navigation_view_selected_icon";
+    private final static String KEY_NAVIGATIONVIEW_NORMAL_ICON = "navigation_view_normal_icon";
+
     private Context mContext;
     private SharedPreferences.Editor mEditor;
 
@@ -133,6 +139,63 @@ public final class Config {
         return this;
     }
 
+    public Config navigationViewThemed(boolean themed) {
+        mEditor.putBoolean(KEY_THEMED_NAVIGATION_VIEW, themed);
+        return this;
+    }
+
+    public Config navigationViewSelectedIcon(@ColorInt int color) {
+        mEditor.putInt(KEY_NAVIGATIONVIEW_SELECTED_ICON, color);
+        return this;
+    }
+
+    public Config navigationViewSelectedIconRes(@ColorRes int colorRes) {
+        return navigationViewSelectedIcon(ContextCompat.getColor(mContext, colorRes));
+    }
+
+    public Config navigationViewSelectedIconAttr(@AttrRes int colorAttr) {
+        return navigationViewSelectedIcon(Util.resolveColor(mContext, colorAttr));
+    }
+
+    public Config navigationViewSelectedText(@ColorInt int color) {
+        mEditor.putInt(KEY_NAVIGATIONVIEW_SELECTED_TEXT, color);
+        return this;
+    }
+
+    public Config navigationViewSelectedTextRes(@ColorRes int colorRes) {
+        return navigationViewSelectedText(ContextCompat.getColor(mContext, colorRes));
+    }
+
+    public Config navigationViewSelectedTextAttr(@AttrRes int colorAttr) {
+        return navigationViewSelectedText(Util.resolveColor(mContext, colorAttr));
+    }
+
+    public Config navigationViewNormalIcon(@ColorInt int color) {
+        mEditor.putInt(KEY_NAVIGATIONVIEW_NORMAL_ICON, color);
+        return this;
+    }
+
+    public Config navigationViewNormalIconRes(@ColorRes int colorRes) {
+        return navigationViewNormalIcon(ContextCompat.getColor(mContext, colorRes));
+    }
+
+    public Config navigationViewNormalIconAttr(@AttrRes int colorAttr) {
+        return navigationViewNormalIcon(Util.resolveColor(mContext, colorAttr));
+    }
+
+    public Config navigationViewNormalText(@ColorInt int color) {
+        mEditor.putInt(KEY_NAVIGATIONVIEW_NORMAL_TEXT, color);
+        return this;
+    }
+
+    public Config navigationViewNormalTextRes(@ColorRes int colorRes) {
+        return navigationViewNormalText(ContextCompat.getColor(mContext, colorRes));
+    }
+
+    public Config navigationViewNormalTextAttr(@AttrRes int colorAttr) {
+        return navigationViewNormalText(Util.resolveColor(mContext, colorAttr));
+    }
+
     public void commit() {
         mEditor.putLong(VALUES_CHANGED, System.currentTimeMillis())
                 .putBoolean(IS_CONFIGURED_KEY, true)
@@ -203,5 +266,29 @@ public final class Config {
 
     public static boolean autoGeneratePrimaryDark(@NonNull Context context) {
         return prefs(context).getBoolean(KEY_AUTO_GENERATE_PRIMARYDARK, true);
+    }
+
+    public static boolean navigationViewThemed(@NonNull Context context) {
+        return prefs(context).getBoolean(KEY_THEMED_NAVIGATION_VIEW, true);
+    }
+
+    @ColorInt
+    public static int navigationViewSelectedIcon(@NonNull Context context) {
+        return prefs(context).getInt(KEY_NAVIGATIONVIEW_SELECTED_ICON, accentColor(context));
+    }
+
+    @ColorInt
+    public static int navigationViewSelectedText(@NonNull Context context) {
+        return prefs(context).getInt(KEY_NAVIGATIONVIEW_SELECTED_TEXT, accentColor(context));
+    }
+
+    @ColorInt
+    public static int navigationViewNormalIcon(@NonNull Context context) {
+        return prefs(context).getInt(KEY_NAVIGATIONVIEW_NORMAL_ICON, textColorSecondary(context));
+    }
+
+    @ColorInt
+    public static int navigationViewNormalText(@NonNull Context context) {
+        return prefs(context).getInt(KEY_NAVIGATIONVIEW_NORMAL_TEXT, textColorPrimary(context));
     }
 }

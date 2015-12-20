@@ -118,14 +118,16 @@ public final class ATE {
     }
 
     private static void processNavigationView(@NonNull NavigationView view) {
+        if (!Config.navigationViewThemed(view.getContext()))
+            return;
         final ColorStateList iconSl = new ColorStateList(
                 new int[][]{
                         new int[]{-android.R.attr.state_checked},
                         new int[]{android.R.attr.state_checked}
                 },
                 new int[]{
-                        Config.textColorSecondary(view.getContext()),
-                        Config.accentColor(view.getContext())
+                        Config.navigationViewNormalIcon(view.getContext()),
+                        Config.navigationViewSelectedIcon(view.getContext())
                 });
         final ColorStateList textSl = new ColorStateList(
                 new int[][]{
@@ -133,8 +135,8 @@ public final class ATE {
                         new int[]{android.R.attr.state_checked}
                 },
                 new int[]{
-                        Config.textColorPrimary(view.getContext()),
-                        Config.accentColor(view.getContext())
+                        Config.navigationViewNormalText(view.getContext()),
+                        Config.navigationViewSelectedText(view.getContext())
                 });
         view.setItemTextColor(textSl);
         view.setItemIconTintList(iconSl);

@@ -218,6 +218,11 @@ ATE.config(this) // context
     .coloredActionBar(true)
     .coloredNavigationBar(false)
     .autoGeneratePrimaryDark(true)
+    .navigationViewThemed(true)
+    .navigationViewSelectedIcon(color)
+    .navigationViewSelectedText(color)
+    .navigationViewNormalIcon(color)
+    .navigationViewNormalText(color)
     .apply(this); // activity, fragment, or view
 ```
 
