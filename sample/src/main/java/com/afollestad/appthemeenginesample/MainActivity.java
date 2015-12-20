@@ -16,12 +16,10 @@ public class MainActivity extends ATEActivity implements ColorChooserDialog.Colo
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        if (!ATE.config(this).isConfigured())
+            ATE.config(this).coloredNavigationBar(true).commit();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        if (!ATE.config(this).isConfigured()) {
-            ATE.config(this).coloredNavigationBar(true);
-        }
     }
 
     @Override

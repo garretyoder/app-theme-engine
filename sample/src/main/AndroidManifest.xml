@@ -21,7 +21,8 @@
 
         <activity
             android:name=".SettingsActivity"
-            android:label="@string/settings" />
+            android:label="@string/settings"
+            android:windowSoftInputMode="stateAlwaysHidden" />
 
     </application>
 
