@@ -171,31 +171,31 @@ Here's a list of available tag values:
 
 You can change the background of any type of view.
 
-1. *bg_primary_color* - sets the background to the primary color.
-2. *bg_primary_color_dark* - sets the background to the primary dark color.
-3. *bg_accent_color* - sets the background to the accent color.
-4. *bg_text_primary* - sets the background to the primary text color.
-5. *bg_text_secondary* - sets the background to the secondary text color.
+1. `bg_primary_color` - sets the background to the primary color.
+2. `bg_primary_color_dark` - sets the background to the primary dark color.
+3. `bg_accent_color` - sets the background to the accent color.
+4. `bg_text_primary` - sets the background to the primary text color.
+5. `bg_text_secondary` - sets the background to the secondary text color.
 
 ### Text Colors
 
 You can only change the text color of a view that extends `TextView`, which includes `Button`'s.
 
-1. *text_primary_color* - sets the text color to the primary color.
-2. *text_primary_color_dark* - sets the text color to the primary dark color.
-3. *text_accent_color* - sets the text color to the accent color.
-4. *text_primary* - sets the text color to the primary text color.
-5. *text_secondary* - sets the text color to the secondary text color.
+1. `text_primary_color` - sets the text color to the primary color.
+2. `text_primary_color_dark` - sets the text color to the primary dark color.
+3. `text_accent_color` - sets the text color to the accent color.
+4. `text_primary` - sets the text color to the primary text color.
+5. `text_secondary` - sets the text color to the secondary text color.
 
 ### Tint Colors
 
 You can tint `CheckBox`'s, `RadioButton`'s, `ProgressBar`'s, `EditText`'s, and `SeekBar`'s. 
 
-1. *tint_primary_color* - tints the view with the primary color.
-2. *tint_primary_color_dark* - tints the view with the primary dark color.
-3. *tint_accent_color* - tints the view with the accent color.
-4. *tint_text_primary* - tints the view with the primary text color.
-5. *tint_text_secondary* - tints the view with the secondary text color.
+1. `tint_primary_color` - tints the view with the primary color.
+2. `tint_primary_color_dark` - tints the view with the primary dark color.
+3. `tint_accent_color` - tints the view with the accent color.
+4. `tint_text_primary` - tints the view with the primary text color.
+5. `tint_text_secondary` - tints the view with the secondary text color.
 
 ---
 
