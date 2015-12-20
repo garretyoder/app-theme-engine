@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">app-theme-engine</string>
+    <string name="header">Header</string>
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vel nisl vel eros accumsan lacinia. Pellentesque vel tellus vitae purus interdum sagittis. Pellentesque vehicula odio ac nibh bibendum suscipit.</string>
+    <string name="checkbox">Checkbox</string>
+    <string name="radiobutton">Ratio Button</string>
+    <string name="edit_text">Input field</string>
+    <string name="change_primary_color">Change Primary Color</string>
+    <string name="change_accent_color">Change Accent Color</string>
+</resources>

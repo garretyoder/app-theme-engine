@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="@dimen/content_inset"
+        android:paddingLeft="@dimen/content_inset"
+        android:paddingRight="@dimen/content_inset"
+        android:paddingTop="@dimen/content_inset"
+        tools:ignore="UnusedAttribute">
+
+        <Button
+            android:id="@+id/changePrimaryColor"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/change_primary_color" />
+
+        <Button
+            android:id="@+id/changeAccentColor"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/change_accent_color" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="@dimen/content_inset"
+            android:layout_marginTop="@dimen/content_inset"
+            android:background="@color/divider" />
+
+        <com.afollestad.appthemeengine.views.ATEPrimaryTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-medium"
+            android:text="@string/header"
+            android:textSize="@dimen/header_text_size" />
+
+        <com.afollestad.appthemeengine.views.ATESecondaryTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_inset"
+            android:fontFamily="sans-serif-light"
+            android:lineSpacingMultiplier="1.4"
+            android:tag="text_secondary"
+            android:text="@string/lorem_ipsum"
+            android:textSize="@dimen/body_text_size" />
+
+        <com.afollestad.appthemeengine.views.ATECheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_inset"
+            android:checked="true"
+            android:text="@string/checkbox" />
+
+        <com.afollestad.appthemeengine.views.ATERadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_inset"
+            android:checked="true"
+            android:text="@string/radiobutton" />
+
+        <com.afollestad.appthemeengine.views.ATEEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_inset"
+            android:hint="@string/edit_text"
+            android:tag="tint_accent_color" />
+
+        <com.afollestad.appthemeengine.views.ATEProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/content_inset"
+            android:tag="tint_accent_color" />
+
+        <com.afollestad.appthemeengine.views.ATESeekBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_inset"
+            android:tag="tint_accent_color" />
+
+    </LinearLayout>
+
+</ScrollView>

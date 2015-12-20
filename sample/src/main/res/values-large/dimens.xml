@@ -1,0 +1,5 @@
+<resources>
+
+    <dimen name="content_inset">24dp</dimen>
+
+</resources>
