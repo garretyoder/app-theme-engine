@@ -140,6 +140,12 @@ public final class ATE {
         }
     }
 
+    public static void apply(@NonNull View view) {
+        if (view.getContext() == null)
+            throw new IllegalStateException("View has no Context, use apply(Context, View) instead.");
+        apply(view.getContext(), view);
+    }
+
     public static void apply(@NonNull Context context, @NonNull View view) {
         if (view instanceof ViewGroup) {
             apply(context, (ViewGroup) view);
