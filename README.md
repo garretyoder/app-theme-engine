@@ -95,6 +95,7 @@ public class MyActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
+        // If values were applied/committed (from Config) since the Activity was created, recreate it now
         if (ATE.didValuesChange(this, updateTime))
             recreate();
     }
