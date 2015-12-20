@@ -8,6 +8,7 @@ import android.os.Build;
 import android.support.annotation.ColorInt;
 import android.support.annotation.FloatRange;
 import android.support.annotation.NonNull;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -107,10 +108,13 @@ public final class ATE {
         final long start = System.currentTimeMillis();
         for (int i = 0; i < view.getChildCount(); i++) {
             final View current = view.getChildAt(i);
-            if (current instanceof ViewGroup) {
-                apply(context, (ViewGroup) current);
-            } else if (current.getTag() != null && current.getTag() instanceof String) {
+            if (current.getTag() != null && current.getTag() instanceof String) {
+                Log.d("ATE", "Processed view: " + current.getClass().getName());
                 processTag(context, current);
+            }
+            if (current instanceof ViewGroup) {
+                Log.d("ATE", "Processed group: " + current.getClass().getName());
+                apply(context, (ViewGroup) current);
             }
         }
         final long diff = System.currentTimeMillis() - start;
@@ -164,7 +168,15 @@ public final class ATE {
                 activity.getActionBar().setBackgroundDrawable(new ColorDrawable(Config.primaryColor(activity)));
             }
         }
-        final ViewGroup rootView = (ViewGroup) activity.getWindow().getDecorView().getRootView();
+
+        final ViewGroup rootView = (ViewGroup) ((ViewGroup) activity.findViewById(android.R.id.content)).getChildAt(0);
+        if (rootView instanceof DrawerLayout) {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP)
+                activity.getWindow().setStatusBarColor(Color.TRANSPARENT);
+            if (Config.coloredStatusBar(activity))
+                ((DrawerLayout) rootView).setStatusBarBackgroundColor(Config.primaryColorDark(activity));
+        }
+
         apply(activity, rootView);
         didPreApply = null;
     }

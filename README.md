@@ -13,6 +13,7 @@ and [Impression](https://github.com/afollestad/impression).
     1. [ATEActivity](https://github.com/afollestad/app-theme-engine#ateactivity)
     2. [Custom Activities and Fragments](https://github.com/afollestad/app-theme-engine#custom-activities-and-fragments)
     3. [Lists](https://github.com/afollestad/app-theme-engine#lists)
+    4. [Navigation Drawers](https://github.com/afollestad/app-theme-engine#navigation-drawers)
 2. [Config](https://github.com/afollestad/app-theme-engine#config)
 3. [Tags](https://github.com/afollestad/app-theme-engine#tags)
     1. [Background Colors](https://github.com/afollestad/app-theme-engine#background-colors) 
@@ -89,6 +90,7 @@ public class MyActivity extends AppCompatActivity {
     public void onCreate(Bundle savedInstanceState) {
         ATE.preApply(this); // apply primary color to status bar and nav bar
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.my_layout); // call BEFORE apply()
         ATE.apply(this);    // apply colors to other views in the Activity
     }
     
@@ -185,6 +187,13 @@ public static class MyAdapter extends BaseAdapter {
     }
 }
 ```
+
+### Navigation Drawers
+
+ATE will automatically adapt when your Activity has a `DrawerLayout` at its root. When `coloredStatusBar()` 
+is set to true, the primary dark theme color will be applied to the `DrawerLayout` rather than directly to 
+the Window status bar. Thus, the status bar will be transparent when the drawer is open, and your theme
+color when it's closed. You don't have to manually do anything.
 
 ---
 

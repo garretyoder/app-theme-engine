@@ -26,5 +26,9 @@
 
     <string name="colored_nav_bar">Colored Navigation Bar</string>
     <string name="colored_nav_bar_summary">Toggle navigation bar coloring</string>
+    <string name="drawer_about">About</string>
+    <string name="drawer_home">Home</string>
+    <string name="drawer_close">Close nav drawer</string>
+    <string name="drawer_open">Open nav drawer</string>
 
 </resources>

@@ -5,5 +5,6 @@
     <dimen name="header_text_size">22sp</dimen>
     <dimen name="body_text_size">16sp</dimen>
     <dimen name="circle_view_border">1dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
 
 </resources>

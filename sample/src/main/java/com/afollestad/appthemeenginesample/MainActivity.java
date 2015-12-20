@@ -1,11 +1,11 @@
 package com.afollestad.appthemeenginesample;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.ColorInt;
 import android.support.annotation.NonNull;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.widget.Toolbar;
 
 import com.afollestad.appthemeengine.ATE;
 import com.afollestad.appthemeengine.ATEActivity;
@@ -14,30 +14,17 @@ import com.afollestad.materialdialogs.color.ColorChooserDialog;
 
 public class MainActivity extends ATEActivity implements ColorChooserDialog.ColorCallback {
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if (!ATE.config(this).isConfigured())
             ATE.config(this).coloredNavigationBar(true).commit();
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-    }
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.main, menu);
-        return super.onCreateOptionsMenu(menu);
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        if (item.getItemId() == android.R.id.home) {
-            onBackPressed();
-            return true;
-        } else if (item.getItemId() == R.id.settings) {
-            startActivity(new Intent(this, SettingsActivity.class));
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
+        final Toolbar toolbar = (Toolbar) findViewById(R.id.appbar_toolbar);
+        final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.setDrawerListener(new ActionBarDrawerToggle(this, drawer, toolbar, R.string.drawer_open, R.string.drawer_close));
     }
 
     @Override
