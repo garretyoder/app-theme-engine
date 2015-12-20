@@ -11,7 +11,8 @@ and [Impression](https://github.com/afollestad/impression).
     2. [Dependency](https://github.com/afollestad/app-theme-engine#dependency)
 2. [Applying](https://github.com/afollestad/app-theme-engine#applying)
     1. [ATEActivity](https://github.com/afollestad/app-theme-engine#ateactivity)
-    2. [Custom Activities and Fragments](https://github.com/afollestad/app-theme-engine#custom-activities-and-fragments) 
+    2. [Custom Activities and Fragments](https://github.com/afollestad/app-theme-engine#custom-activities-and-fragments)
+    3. [Lists](https://github.com/afollestad/app-theme-engine#lists)
 2. [Config](https://github.com/afollestad/app-theme-engine#config)
 3. [Tags](https://github.com/afollestad/app-theme-engine#tags)
     1. [Background Colors](https://github.com/afollestad/app-theme-engine#background-colors) 
@@ -107,6 +108,77 @@ public class MyFragment extends Fragment {
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ATE.apply(this);
+    }
+}
+```
+
+### Lists
+
+When working with lists, you have to apply the theme engine to individual views through your adapter.
+
+For **RecyclerViews**:
+
+```java
+public static class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
+
+    public MyAdapter() {
+    }
+
+    @Override
+    public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        View list = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.list_item, parent, false);
+        return new MyViewHolder(list);
+    }
+
+    @Override
+    public void onBindViewHolder(MyViewHolder holder, int position) {
+        // Setup views
+    }
+
+    @Override
+    public int getItemCount() {
+        return 20;
+    }
+
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+
+        public MyViewHolder(View itemView) {
+            super(itemView);
+            ATE.apply(itemView.getContext(), itemView);
+        }
+    }
+}
+```
+
+For **ListViews**:
+
+```java
+public static class MyAdapter extends BaseAdapter {
+
+    @Override
+    public int getCount() {
+        return 20;
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return null;
+    }
+
+    @Override
+    public long getItemId(int position) {
+        return position;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        if (convertView == null) {
+            convertView = LayoutInflater.from(parent.getContext())
+                    .inflate(R.layout.list_item, parent, false);
+        }
+        ATE.apply(convertView.getContext(), convertView);
+        return convertView;
     }
 }
 ```
