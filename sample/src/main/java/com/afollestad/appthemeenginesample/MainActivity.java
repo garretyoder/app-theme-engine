@@ -15,7 +15,7 @@ import com.afollestad.appthemeengine.ATEActivity;
 import com.afollestad.appthemeengine.Config;
 import com.afollestad.materialdialogs.color.ColorChooserDialog;
 
-public class MainActivity extends ATEActivity implements ColorChooserDialog.ColorCallback {
+public class MainActivity extends ATEActivity {
 
     private DrawerLayout mDrawer;
 
@@ -64,16 +64,5 @@ public class MainActivity extends ATEActivity implements ColorChooserDialog.Colo
 
     private void post(Runnable runnable) {
         mDrawer.postDelayed(runnable, 200);
-    }
-
-    @Override
-    public void onColorSelection(@NonNull ColorChooserDialog dialog, @ColorInt int selectedColor) {
-        Config config = ATE.config(this);
-        if (dialog.isAccentMode()) {
-            config.accentColor(selectedColor);
-        } else {
-            config.primaryColor(selectedColor);
-        }
-        config.apply(this);
     }
 }
