@@ -177,7 +177,7 @@ public final class ATE {
     }
 
     public static boolean didValuesChange(@NonNull Context context, long updateTime) {
-        return Config.prefs(context).getLong(Config.VALUES_CHANGED, -1) > updateTime;
+        return ATE.config(context).isConfigured() && Config.prefs(context).getLong(Config.VALUES_CHANGED, -1) > updateTime;
     }
 
     public static void preApply(@NonNull Activity activity) {
