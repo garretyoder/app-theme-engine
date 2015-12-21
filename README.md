@@ -16,8 +16,9 @@ Download the [latest sample APK](https://github.com/afollestad/app-theme-engine/
 2. [Applying](https://github.com/afollestad/app-theme-engine#applying)
     1. [ATEActivity](https://github.com/afollestad/app-theme-engine#ateactivity)
     2. [Custom Activities and Fragments](https://github.com/afollestad/app-theme-engine#custom-activities-and-fragments)
-    3. [Lists](https://github.com/afollestad/app-theme-engine#lists)
-    4. [Navigation Drawers](https://github.com/afollestad/app-theme-engine#navigation-drawers)
+    3. [Overflow Menu Widgets](https://github.com/afollestad/app-theme-engine#overflow-menu-widgets)
+    4. [Lists](https://github.com/afollestad/app-theme-engine#lists)
+    5. [Navigation Drawers](https://github.com/afollestad/app-theme-engine#navigation-drawers)
 2. [Config](https://github.com/afollestad/app-theme-engine#config)
     1. [Modifiers](https://github.com/afollestad/app-theme-engine#modifiers)
     2. [Default Configuration](https://github.com/afollestad/app-theme-engine#default-configuration)
@@ -132,6 +133,42 @@ public class MyFragment extends Fragment {
 }
 ```
 
+### Overflow Menu Widgets
+
+If you have checkboxes or radio buttons in your Toolbar's overflow menu, you can tint them to your accent 
+color:
+
+```java
+public class MyActivity extends ATEActivity {
+
+    private Toolbar mToolbar;
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.my_activity);
+        
+        mToolbar = (Toolbar) findViewById(R.id.my_toolbar);
+        setSupportActionbar(mToolbar); // ATE does not support toolbars that aren't set as action bars right now
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onMenuOpened(int featureId, Menu menu) {
+        // When the overflow menu opens, a tint is applied to the widget views inside
+        ATE.applyMenu(mToolbar);
+        return super.onMenuOpened(featureId, menu);
+    }
+}
+```
+
+You could override `onMenuOpened(int, Menu)` from any other type of `Activity` too, not just `ATEActivity`.
+
 ### Lists
 
 When working with lists, you have to apply the theme engine to individual views through your adapter.
@@ -165,6 +202,7 @@ public static class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolde
 
         public MyViewHolder(View itemView) {
             super(itemView);
+            // It's recommended you only apply the theme the first time the holder is created
             ATE.apply(itemView.getContext(), itemView);
         }
     }
@@ -196,8 +234,9 @@ public static class MyAdapter extends BaseAdapter {
         if (convertView == null) {
             convertView = LayoutInflater.from(parent.getContext())
                     .inflate(R.layout.list_item, parent, false);
+            // Only apply the first time the view is created
+            ATE.apply(convertView.getContext(), convertView);
         }
-        ATE.apply(convertView.getContext(), convertView);
         return convertView;
     }
 }

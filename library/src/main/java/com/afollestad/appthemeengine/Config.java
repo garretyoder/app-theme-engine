@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.annotation.AttrRes;
 import android.support.annotation.ColorInt;
 import android.support.annotation.ColorRes;
@@ -243,17 +244,17 @@ public final class Config {
 
     @ColorInt
     public static int primaryColor(@NonNull Context context) {
-        return prefs(context).getInt(KEY_PRIMARY_COLOR, Util.resolveColor(context, R.attr.colorPrimary));
+        return prefs(context).getInt(KEY_PRIMARY_COLOR, Util.resolveColor(context, R.attr.colorPrimary, Color.parseColor("#455A64")));
     }
 
     @ColorInt
     public static int primaryColorDark(@NonNull Context context) {
-        return prefs(context).getInt(KEY_PRIMARY_COLOR_DARK, Util.resolveColor(context, R.attr.colorPrimaryDark));
+        return prefs(context).getInt(KEY_PRIMARY_COLOR_DARK, Util.resolveColor(context, R.attr.colorPrimaryDark, Color.parseColor("#37474F")));
     }
 
     @ColorInt
     public static int accentColor(@NonNull Context context) {
-        return prefs(context).getInt(KEY_ACCENT_COLOR, Util.resolveColor(context, R.attr.colorAccent));
+        return prefs(context).getInt(KEY_ACCENT_COLOR, Util.resolveColor(context, R.attr.colorAccent, Color.parseColor("#263238")));
     }
 
     @ColorInt

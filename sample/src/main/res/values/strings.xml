@@ -41,5 +41,6 @@
         <a href=\'https://www.linkedin.com/in/afollestad\'>LinkedIn</a>
     ]]></string>
     <string name="dismiss">Dismiss</string>
+    <string name="radiobutton_clickme">Radio button (click me)</string>
 
 </resources>

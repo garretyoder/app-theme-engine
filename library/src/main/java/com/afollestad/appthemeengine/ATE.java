@@ -12,11 +12,22 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.view.menu.BaseMenuPresenter;
+import android.support.v7.view.menu.ListMenuItemView;
+import android.support.v7.view.menu.MenuPopupHelper;
+import android.support.v7.widget.ActionMenuView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.view.Window;
+import android.widget.CheckBox;
+import android.widget.ListView;
+import android.widget.RadioButton;
 import android.widget.TextView;
+
+import java.lang.reflect.Field;
 
 /**
  * @author Aidan Follestad (afollestad)
@@ -252,6 +263,86 @@ public final class ATE {
         apply(fragment.getActivity(), (ViewGroup) fragment.getView());
         if (fragment.getActivity() instanceof AppCompatActivity)
             apply(fragment.getActivity());
+    }
+
+    public static void applyMenu(final @NonNull Toolbar mToolbar) {
+        mToolbar.post(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Field f1 = Toolbar.class.getDeclaredField("mMenuView");
+                    f1.setAccessible(true);
+                    ActionMenuView actionMenuView = (ActionMenuView) f1.get(mToolbar);
+
+                    Field f2 = ActionMenuView.class.getDeclaredField("mPresenter");
+                    f2.setAccessible(true);
+
+                    //Actually ActionMenuPresenter
+                    BaseMenuPresenter presenter = (BaseMenuPresenter) f2.get(actionMenuView);
+
+                    Field f3 = presenter.getClass().getDeclaredField("mOverflowPopup");
+                    f3.setAccessible(true);
+                    MenuPopupHelper overflowMenuPopupHelper = (MenuPopupHelper) f3.get(presenter);
+                    setTintForMenuPopupHelper(overflowMenuPopupHelper);
+
+                    Field f4 = presenter.getClass().getDeclaredField("mActionButtonPopup");
+                    f4.setAccessible(true);
+                    MenuPopupHelper subMenuPopupHelper = (MenuPopupHelper) f4.get(presenter);
+                    setTintForMenuPopupHelper(subMenuPopupHelper);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
+
+    private static void setTintForMenuPopupHelper(MenuPopupHelper menuPopupHelper) {
+        if (menuPopupHelper != null) {
+            final ListView listView = menuPopupHelper.getPopup().getListView();
+            listView.getViewTreeObserver().addOnGlobalLayoutListener(new ViewTreeObserver.OnGlobalLayoutListener() {
+                @Override
+                public void onGlobalLayout() {
+                    try {
+                        Field checkboxField = ListMenuItemView.class.getDeclaredField("mCheckBox");
+                        checkboxField.setAccessible(true);
+                        Field radioButtonField = ListMenuItemView.class.getDeclaredField("mRadioButton");
+                        radioButtonField.setAccessible(true);
+
+                        for (int i = 0; i < listView.getChildCount(); i++) {
+                            View v = listView.getChildAt(i);
+                            if (!(v instanceof ListMenuItemView)) {
+                                continue;
+                            }
+                            ListMenuItemView iv = (ListMenuItemView) v;
+
+                            CheckBox check = (CheckBox) checkboxField.get(iv);
+                            if (check != null) {
+                                TintHelper.setTint(check, Config.accentColor(listView.getContext()));
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                    check.setBackground(null);
+                                }
+                            }
+
+                            RadioButton radioButton = (RadioButton) radioButtonField.get(iv);
+                            if (radioButton != null) {
+                                TintHelper.setTint(radioButton, Config.accentColor(listView.getContext()));
+                                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                                    radioButton.setBackground(null);
+                                }
+                            }
+                        }
+                    } catch (Throwable e) {
+                        e.printStackTrace();
+                    }
+                    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN) {
+                        listView.getViewTreeObserver().removeOnGlobalLayoutListener(this);
+                    } else {
+                        //noinspection deprecation
+                        listView.getViewTreeObserver().removeGlobalOnLayoutListener(this);
+                    }
+                }
+            });
+        }
     }
 
     @ColorInt
