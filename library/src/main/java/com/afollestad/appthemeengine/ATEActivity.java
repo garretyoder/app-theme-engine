@@ -20,8 +20,8 @@ public class ATEActivity extends AppCompatActivity {
     }
 
     private void apply() {
-        updateTime = System.currentTimeMillis();
         ATE.apply(this);
+        updateTime = System.currentTimeMillis();
     }
 
     @Override
