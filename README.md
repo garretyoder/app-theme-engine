@@ -4,11 +4,7 @@ App Theme Engine is a library that makes it easy for developers to implement a t
 their apps, similar to what's seen in [Cabinet](https://play.google.com/store/apps/details?id=com.afollestad.cabinet) 
 and [Impression](https://github.com/afollestad/impression).
 
-Download the [latest sample APK](https://github.com/afollestad/app-theme-engine/raw/master/sample/Sample.apk) to check it out!
-
-# TODO
-
-1. Move the code over from Cabinet/Impression which tints controls inside a actionbar/toolbar's overflow menu. 
+Download the [latest sample APK](https://github.com/afollestad/app-theme-engine/raw/master/sample/Sample.apk) to check it out! 
 
 ---
 
