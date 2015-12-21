@@ -99,6 +99,7 @@ public class MyActivity extends AppCompatActivity {
         ATE.preApply(this); // apply primary color to status bar and nav bar
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_layout); // call BEFORE apply()
+        lastUpdateTime = System.currentTimeMillis();
         ATE.apply(this);    // apply colors to other views in the Activity
     }
     
