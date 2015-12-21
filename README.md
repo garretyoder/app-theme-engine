@@ -277,7 +277,7 @@ colors from an image using Palette to get theme colors, you can implement `ATESt
 in the Activities which require it.
 
 ```java
-public class MyActivity extends AppCompatActivtiy implements ATEStatusBarCustomizer {
+public class MyActivity extends AppCompatActivity implements ATEStatusBarCustomizer {
     
     @ColorInt
     @Override
