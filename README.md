@@ -6,6 +6,15 @@ and [Impression](https://github.com/afollestad/impression).
 
 Download the [latest sample APK](https://github.com/afollestad/app-theme-engine/raw/master/sample/Sample.apk) to check it out!
 
+---
+
+# TODO
+
+1. During first-time-configuration, Activity will always recreate itself in onResume, since `didValuesChange()` 
+will return true in all cases before the first Config commit.
+
+---
+
 # Table of Contents
 
 1. [Gradle Dependency](https://github.com/afollestad/app-theme-engine#gradle-dependency)
