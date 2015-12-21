@@ -23,6 +23,7 @@ public final class Config {
     private final static String KEY_PRIMARY_COLOR = "primary_color";
     private final static String KEY_PRIMARY_COLOR_DARK = "primary_color_dark";
     private final static String KEY_ACCENT_COLOR = "accent_color";
+    private final static String KEY_STATUS_BAR_COLOR = "status_bar_color";
 
     private final static String KEY_TEXT_COLOR_PRIMARY = "text_color_primary";
     private final static String KEY_TEXT_COLOR_SECONDARY = "text_color_secondary";
@@ -91,6 +92,19 @@ public final class Config {
 
     public Config accentColorAttr(@AttrRes int colorAttr) {
         return accentColor(Util.resolveColor(mContext, colorAttr));
+    }
+
+    public Config statusBarColor(@ColorInt int color) {
+        mEditor.putInt(KEY_STATUS_BAR_COLOR, color);
+        return this;
+    }
+
+    public Config statusBarColorRes(@ColorRes int colorRes) {
+        return statusBarColor(ContextCompat.getColor(mContext, colorRes));
+    }
+
+    public Config statusBarColorAttr(@AttrRes int colorAttr) {
+        return statusBarColor(Util.resolveColor(mContext, colorAttr));
     }
 
     public Config textColorPrimary(@ColorInt int color) {
@@ -240,6 +254,11 @@ public final class Config {
     @ColorInt
     public static int accentColor(@NonNull Context context) {
         return prefs(context).getInt(KEY_ACCENT_COLOR, Util.resolveColor(context, R.attr.colorAccent));
+    }
+
+    @ColorInt
+    public static int statusBarColor(@NonNull Context context) {
+        return prefs(context).getInt(KEY_STATUS_BAR_COLOR, primaryColorDark(context));
     }
 
     @ColorInt

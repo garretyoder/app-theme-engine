@@ -8,13 +8,6 @@ Download the [latest sample APK](https://github.com/afollestad/app-theme-engine/
 
 ---
 
-# TODO
-
-1. During first-time-configuration, Activity will always recreate itself in onResume, since `didValuesChange()` 
-will return true in all cases before the first Config commit.
-
----
-
 # Table of Contents
 
 1. [Gradle Dependency](https://github.com/afollestad/app-theme-engine#gradle-dependency)
@@ -61,7 +54,7 @@ Add this to your module's `build.gradle` file:
 ```gradle
 dependencies {
 	...
-	compile('com.github.afollestad:app-theme-engine:0.2.0') {
+	compile('com.github.afollestad:app-theme-engine:0.2.1') {
 		transitive = true
 	}
 }
@@ -234,6 +227,7 @@ ATE.config(this) // context
     .primaryColor(color)
     .primaryColorDark(color)
     .accentColor(color)
+    .statusBarColor(color) // by default, is equal to whatever primaryColorDark is set to
     .textColorPrimary(color)
     .textColorSecondary(color)
     .coloredStatusBar(true)
