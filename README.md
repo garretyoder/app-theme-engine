@@ -18,6 +18,7 @@ and [Impression](https://github.com/afollestad/impression).
 3. [Tags](https://github.com/afollestad/app-theme-engine#tags)
     1. [Background Colors](https://github.com/afollestad/app-theme-engine#background-colors) 
     2. [Text Colors](https://github.com/afollestad/app-theme-engine#text-colors)
+    3. [Text Link Colors](https://github.com/afollestad/app-theme-engine#text-link-colors)
     3. [Tint Colors](https://github.com/afollestad/app-theme-engine#tint-colors)
 4. [Pre-made Views](https://github.com/afollestad/app-theme-engine#pre-made-views)
 
@@ -49,7 +50,9 @@ Add this to your module's `build.gradle` file:
 ```gradle
 dependencies {
 	...
-	compile 'com.github.afollestad:app-theme-engine:0.1.0'
+	compile('com.github.afollestad:app-theme-engine:0.2.0') {
+		transitive = true
+	}
 }
 ```
 
@@ -70,6 +73,9 @@ public class MyActivity extends ATEActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        
+        // setContentView() triggers the theme engine
+        setContentView(R.layout.my_layout);
     }
 }
 ```
@@ -194,6 +200,10 @@ ATE will automatically adapt when your Activity has a `DrawerLayout` at its root
 is set to true, the primary dark theme color will be applied to the `DrawerLayout` rather than directly to 
 the Window status bar. Thus, the status bar will be transparent when the drawer is open, and your theme
 color when it's closed. You don't have to manually do anything.
+
+If you use `NavigationView` from the design support library, ATE will by default theme it. There are 
+navigation view theming configuration methods discussed in the next section. If your drawer uses a `Fragment`
+or plain `ListView`/`RecyclerView`, you have to do what's discussed in the previous section.
 
 ---
 

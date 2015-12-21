@@ -4,6 +4,15 @@ android {
     compileSdkVersion 23
     buildToolsVersion "23.0.2"
 
+    // Note-to-self: sample uses Cabinet's keystore
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFile = new File(
+                    output.outputFile.parent, "Sample.apk")
+        }
+    }
+
     lintOptions {
         abortOnError false
     }
@@ -12,7 +21,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
-        versionName "0.1.0"
+        versionName "0.2.0"
     }
     buildTypes {
         release {
