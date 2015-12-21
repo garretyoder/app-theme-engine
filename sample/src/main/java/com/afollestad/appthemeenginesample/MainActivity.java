@@ -29,7 +29,9 @@ public class MainActivity extends ATEActivity {
                     .coloredNavigationBar(true)
                     .commit();
         }
+
         super.onCreate(savedInstanceState);
+        ATE.applyTaskDescription(this, R.mipmap.ic_launcher);
         setContentView(R.layout.activity_main);
 
         mToolbar = (Toolbar) findViewById(R.id.appbar_toolbar);

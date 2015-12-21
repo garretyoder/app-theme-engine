@@ -16,9 +16,10 @@ Download the [latest sample APK](https://github.com/afollestad/app-theme-engine/
 2. [Applying](https://github.com/afollestad/app-theme-engine#applying)
     1. [ATEActivity](https://github.com/afollestad/app-theme-engine#ateactivity)
     2. [Custom Activities and Fragments](https://github.com/afollestad/app-theme-engine#custom-activities-and-fragments)
-    3. [Overflow Menu Widgets](https://github.com/afollestad/app-theme-engine#overflow-menu-widgets)
-    4. [Lists](https://github.com/afollestad/app-theme-engine#lists)
-    5. [Navigation Drawers](https://github.com/afollestad/app-theme-engine#navigation-drawers)
+    3. [Task Description (Recents)](https://github.com/afollestad/app-theme-engine#task-description-recents)
+    4. [Overflow Menu Widgets](https://github.com/afollestad/app-theme-engine#overflow-menu-widgets)
+    5. [Lists](https://github.com/afollestad/app-theme-engine#lists)
+    6. [Navigation Drawers](https://github.com/afollestad/app-theme-engine#navigation-drawers)
 2. [Config](https://github.com/afollestad/app-theme-engine#config)
     1. [Modifiers](https://github.com/afollestad/app-theme-engine#modifiers)
     2. [Default Configuration](https://github.com/afollestad/app-theme-engine#default-configuration)
@@ -132,6 +133,25 @@ public class MyFragment extends Fragment {
     }
 }
 ```
+
+### Task Description (Recents)
+
+If you want to theme your Activity's entry in Android's recents (multi-tasking) list, you can do so with one method:
+
+```java
+public class MyActivity extends AppCompatActivity {
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        
+        // Applies primaryColor() to the task description, and uses icon resource called ic_launcher
+        ATE.applyTaskDescription(this, R.drawable.ic_launcher);
+    }
+}
+```
+
+**Note**: this only has an affect on API 21 (Lollipop) and above.
 
 ### Overflow Menu Widgets
 

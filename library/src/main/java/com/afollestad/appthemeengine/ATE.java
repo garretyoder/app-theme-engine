@@ -1,12 +1,15 @@
 package com.afollestad.appthemeengine;
 
 import android.app.Activity;
+import android.app.ActivityManager;
 import android.content.Context;
 import android.content.res.ColorStateList;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Build;
 import android.support.annotation.ColorInt;
+import android.support.annotation.DrawableRes;
 import android.support.annotation.FloatRange;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
@@ -263,6 +266,17 @@ public final class ATE {
         apply(fragment.getActivity(), (ViewGroup) fragment.getView());
         if (fragment.getActivity() instanceof AppCompatActivity)
             apply(fragment.getActivity());
+    }
+
+    public static void applyTaskDescription(@NonNull Activity activity, @DrawableRes int icon) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            // Sets color of entry in the system recents page
+            ActivityManager.TaskDescription td = new ActivityManager.TaskDescription(
+                    (String) activity.getTitle(),
+                    BitmapFactory.decodeResource(activity.getResources(), icon),
+                    Config.primaryColor(activity));
+            activity.setTaskDescription(td);
+        }
     }
 
     public static void applyMenu(final @NonNull Toolbar mToolbar) {
