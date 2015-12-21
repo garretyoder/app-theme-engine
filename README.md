@@ -40,7 +40,7 @@ Download the [latest sample APK](https://github.com/afollestad/app-theme-engine/
 [![Build Status](https://travis-ci.org/afollestad/app-theme-engine.svg)](https://travis-ci.org/afollestad/app-theme-engine)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
-### Repository
+#### Repository
 
 Add this in your root `build.gradle` file (**not** your module `build.gradle` file):
 
@@ -53,7 +53,7 @@ allprojects {
 }
 ```
 
-### Dependency
+#### Dependency
 
 Add this to your module's `build.gradle` file:
 
@@ -72,7 +72,7 @@ dependencies {
 
 Before we go into details of how you can configure theme colors, you need to know how the theme engine is applied.
 
-### ATEActivity
+#### ATEActivity
 
 As seen in the sample project, you can have all Activities in your app extends `ATEActivity`. This will do
 all the heavy lifting for you, all that you have to worry about is theme configuration.
@@ -93,7 +93,7 @@ public class MyActivity extends ATEActivity {
 If you were to change theme colors from a visible `ATEActivity`, the changes are reflected automatically
 if you use the `apply()` methods discussed in the next two sections.
 
-### Custom Activities and Fragments
+#### Custom Activities and Fragments
 
 If you don't use `ATEActivity`, there's a few things you have to do:
 
@@ -134,7 +134,7 @@ public class MyFragment extends Fragment {
 }
 ```
 
-### Task Description (Recents)
+#### Task Description (Recents)
 
 If you want to theme your Activity's entry in Android's recents (multi-tasking) list, you can do so with one method:
 
@@ -153,7 +153,7 @@ public class MyActivity extends AppCompatActivity {
 
 **Note**: this only has an affect on API 21 (Lollipop) and above.
 
-### Overflow Menu Widgets
+#### Overflow Menu Widgets
 
 If you have checkboxes or radio buttons in your Toolbar's overflow menu, you can tint them to your accent 
 color:
@@ -189,11 +189,11 @@ public class MyActivity extends ATEActivity {
 
 You could override `onMenuOpened(int, Menu)` from any other type of `Activity` too, not just `ATEActivity`.
 
-### Lists
+#### Lists
 
 When working with lists, you have to apply the theme engine to individual views through your adapter.
 
-For **RecyclerViews**:
+For *RecyclerViews*:
 
 ```java
 public static class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
@@ -229,7 +229,7 @@ public static class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolde
 }
 ```
 
-For **ListViews**:
+For *ListViews*:
 
 ```java
 public static class MyAdapter extends BaseAdapter {
@@ -262,7 +262,7 @@ public static class MyAdapter extends BaseAdapter {
 }
 ```
 
-### Navigation Drawers
+#### Navigation Drawers
 
 ATE will automatically adapt when your Activity has a `DrawerLayout` at its root. When `coloredStatusBar()` 
 is set to true, the primary dark theme color will be applied to the `DrawerLayout` rather than directly to 
@@ -283,7 +283,7 @@ library allows you to dynamically change theme colors at runtime.
 All configuration options are persisted using SharedPreferences, meaning once you set them, you don't have 
 to set them again unless you want the value to be changed from what it was previously.
 
-### Modifiers
+#### Modifiers
 
 Here are a few configuration methods that can be used:
 
@@ -311,7 +311,7 @@ There's also color resource and color attribute variations of the color modifier
 rather than using `primaryColor(int)`, you could use `primaryColorRes(int)` or `primaryColorAttr(int)` 
 in order to pass a value in the format `R.color.resourceValue` or `R.attr.attributeValue`.
 
-### Default Configuration
+#### Default Configuration
 
 If you want to setup a default configuration the first time your app is run, you can use code like this:
 
@@ -321,7 +321,7 @@ if (!ATE.config(this).isConfigured()) {
 }
 ```
 
-### Value Retrieval
+#### Value Retrieval
 
 Using the `Config` class, you can retrieve your theme values (if you need to for any reason). For an example:
 
@@ -329,7 +329,7 @@ Using the `Config` class, you can retrieve your theme values (if you need to for
 int primaryColor = Config.primaryColor(this);
 ```
 
-### ATEStatusBarCustomizer
+#### ATEStatusBarCustomizer
 
 If you want individual Activities to have different status bar colors, e.g. in an app that extracts
 colors from an image using Palette to get theme colors, you can implement `ATEStatusBarCustomizer` 
@@ -372,7 +372,7 @@ The theme engine allows you to apply theme colors to any view using tags. **You 
 
 Here's a list of available tag values:
 
-### Background Colors
+#### Background Colors
 
 You can change the background of any type of view.
 
@@ -382,7 +382,7 @@ You can change the background of any type of view.
 4. `bg_text_primary` - sets the background to the primary text color.
 5. `bg_text_secondary` - sets the background to the secondary text color.
 
-### Text Colors
+#### Text Colors
 
 You can only change the text color of a view that extends `TextView`, which includes `Button`'s.
 
@@ -392,7 +392,7 @@ You can only change the text color of a view that extends `TextView`, which incl
 4. `text_primary` - sets the text color to the primary text color.
 5. `text_secondary` - sets the text color to the secondary text color.
 
-### Text Link Colors
+#### Text Link Colors
 
 This should only really be needed on `TextView'`s, it changes the color of links when TextViews are linkable.
 
@@ -402,7 +402,7 @@ This should only really be needed on `TextView'`s, it changes the color of links
 4. `text_link_primary` - sets the link text color to the primary text color.
 5. `text_link_secondary` - sets the link text color to the secondary text color. 
 
-### Tint Colors
+#### Tint Colors
 
 You can tint `CheckBox`'s, `RadioButton`'s, `ProgressBar`'s, `EditText`'s, `SeekBar`'s, and `ImageView`'s. 
 
