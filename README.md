@@ -19,6 +19,10 @@ Download the [latest sample APK](https://github.com/afollestad/app-theme-engine/
     3. [Lists](https://github.com/afollestad/app-theme-engine#lists)
     4. [Navigation Drawers](https://github.com/afollestad/app-theme-engine#navigation-drawers)
 2. [Config](https://github.com/afollestad/app-theme-engine#config)
+    1. [Modifiers](https://github.com/afollestad/app-theme-engine#modifiers)
+    2. [Default Configuration](https://github.com/afollestad/app-theme-engine#default-configuration)
+    3. [Value Retrieval](https://github.com/afollestad/app-theme-engine#value-retrieval)
+    4. [ATEStatusBarCustomizer](https://github.com/afollestad/app-theme-engine#atestatusbarcustomizer)
 3. [Tags](https://github.com/afollestad/app-theme-engine#tags)
     1. [Background Colors](https://github.com/afollestad/app-theme-engine#background-colors) 
     2. [Text Colors](https://github.com/afollestad/app-theme-engine#text-colors)
@@ -260,7 +264,7 @@ if (!ATE.config(this).isConfigured()) {
 
 ### Value Retrieval
 
-Using the `Config` class, you can retrieve your theme values. For an example:
+Using the `Config` class, you can retrieve your theme values (if you need to for any reason). For an example:
 
 ```java
 int primaryColor = Config.primaryColor(this);
