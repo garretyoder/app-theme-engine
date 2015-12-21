@@ -185,7 +185,7 @@ public final class ATE {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             final Window window = activity.getWindow();
             if (Config.coloredStatusBar(activity))
-                window.setStatusBarColor(Config.primaryColorDark(activity));
+                window.setStatusBarColor(Config.statusBarColor(activity));
             else window.setStatusBarColor(Color.BLACK);
             if (Config.coloredNavigationBar(activity))
                 window.setNavigationBarColor(Config.primaryColor(activity));
@@ -227,7 +227,7 @@ public final class ATE {
                 activity.getWindow().setStatusBarColor(color);
             }
             if (Config.coloredStatusBar(activity))
-                ((DrawerLayout) rootView).setStatusBarBackgroundColor(Config.primaryColorDark(activity));
+                ((DrawerLayout) rootView).setStatusBarBackgroundColor(Config.statusBarColor(activity));
         }
 
         apply(activity, rootView);

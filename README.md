@@ -220,6 +220,8 @@ library allows you to dynamically change theme colors at runtime.
 All configuration options are persisted using SharedPreferences, meaning once you set them, you don't have 
 to set them again unless you want the value to be changed from what it was previously.
 
+### Modifiers
+
 Here are a few configuration methods that can be used:
 
 ```java
@@ -246,7 +248,7 @@ There's also color resource and color attribute variations of the color modifier
 rather than using `primaryColor(int)`, you could use `primaryColorRes(int)` or `primaryColorAttr(int)` 
 in order to pass a value in the format `R.color.resourceValue` or `R.attr.attributeValue`.
 
----
+### Default Configuration
 
 If you want to setup a default configuration the first time your app is run, you can use code like this:
 
@@ -256,12 +258,31 @@ if (!ATE.config(this).isConfigured()) {
 }
 ```
 
----
+### Value Retrieval
 
-Using the `Config` class, you can retrieve your set theme values. For an example:
+Using the `Config` class, you can retrieve your theme values. For an example:
 
 ```java
 int primaryColor = Config.primaryColor(this);
+```
+
+### ATEStatusBarCustomizer
+
+If you want individual Activities to have different status bar colors, e.g. in an app that extracts
+colors from an image using Palette to get theme colors, you can implement `ATEStatusBarCustomizer` 
+in the Activities which require it.
+
+```java
+public class MyActivity extends AppCompatActivtiy implements ATEStatusBarCustomizer {
+
+    ...
+    
+    @ColorInt
+    @Override
+    public int getStatusBarColor() {
+        return Color.RED; // returnw whatever you want here
+    }
+}
 ```
 
 ---

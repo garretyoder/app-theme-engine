@@ -258,6 +258,8 @@ public final class Config {
 
     @ColorInt
     public static int statusBarColor(@NonNull Context context) {
+        if (context instanceof ATEStatusBarCustomizer)
+            return ((ATEStatusBarCustomizer) context).getStatusBarColor();
         return prefs(context).getInt(KEY_STATUS_BAR_COLOR, primaryColorDark(context));
     }
 
