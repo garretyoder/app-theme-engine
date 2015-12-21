@@ -104,7 +104,7 @@ public class MyActivity extends AppCompatActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        ATE.preApply(this); // apply primary color to status bar and nav bar
+        ATE.preApply(this); // apply primary color to status bar, nav bar, and task description (recents)
         super.onCreate(savedInstanceState);
         setContentView(R.layout.my_layout); // call BEFORE apply()
         updateTime = System.currentTimeMillis();
@@ -133,25 +133,6 @@ public class MyFragment extends Fragment {
     }
 }
 ```
-
-#### Task Description (Recents)
-
-If you want to theme your Activity's entry in Android's recents (multi-tasking) list, you can do so with one method:
-
-```java
-public class MyActivity extends AppCompatActivity {
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        
-        // Applies primaryColor() to the task description, and uses icon resource called ic_launcher
-        ATE.applyTaskDescription(this, R.drawable.ic_launcher);
-    }
-}
-```
-
-**Note**: this only has an affect on API 21 (Lollipop) and above.
 
 #### Overflow Menu Widgets
 
