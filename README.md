@@ -278,13 +278,11 @@ in the Activities which require it.
 
 ```java
 public class MyActivity extends AppCompatActivtiy implements ATEStatusBarCustomizer {
-
-    ...
     
     @ColorInt
     @Override
     public int getStatusBarColor() {
-        return Color.RED; // returnw whatever you want here
+        return Color.RED; // return whatever you want here
     }
 }
 ```
