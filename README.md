@@ -74,9 +74,9 @@ Add this to your module's `build.gradle` file (make sure the version matches the
 ```gradle
 dependencies {
 	...
-	compile('com.github.garretyoder:app-theme-engine:1.5') {
-		transitive = true
-	}
+	compile('com.github.garretyoder:app-theme-engine:1.5@aar') {
+        transitive = true
+    }
 }
 ```
 
