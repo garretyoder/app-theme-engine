@@ -1,4 +1,4 @@
-package com.afollestad.appthemeengine;
+package com.polaric.appthemeengine;
 
 import android.os.Bundle;
 import android.support.annotation.LayoutRes;
@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 /**
- * @author Aidan Follestad (afollestad)
+ * @author Aidan Follestad (polaric)
  */
 public class ATEActivity extends AppCompatActivity {
 

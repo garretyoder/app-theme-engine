@@ -1,4 +1,4 @@
-package com.afollestad.appthemeenginesample;
+package com.polaric.appthemeenginesample;
 
 import android.content.Intent;
 import android.graphics.Color;
@@ -10,8 +10,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.afollestad.appthemeengine.ATE;
-import com.afollestad.appthemeengine.ATEActivity;
+import com.polaric.appthemeengine.ATE;
+import com.polaric.appthemeengine.ATEActivity;
 
 public class MainActivity extends ATEActivity {
 

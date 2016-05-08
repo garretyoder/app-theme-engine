@@ -1,4 +1,4 @@
-package com.afollestad.appthemeengine;
+package com.polaric.appthemeengine;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -33,7 +33,7 @@ import android.widget.TextView;
 import java.lang.reflect.Field;
 
 /**
- * @author Aidan Follestad (afollestad)
+ * @author Aidan Follestad (polaric)
  */
 public final class ATE {
 

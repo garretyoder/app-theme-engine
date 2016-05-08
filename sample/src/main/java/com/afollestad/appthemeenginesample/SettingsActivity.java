@@ -1,4 +1,4 @@
-package com.afollestad.appthemeenginesample;
+package com.polaric.appthemeenginesample;
 
 import android.annotation.SuppressLint;
 import android.graphics.Color;
@@ -10,14 +10,14 @@ import android.support.annotation.NonNull;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.afollestad.appthemeengine.ATE;
-import com.afollestad.appthemeengine.ATEActivity;
-import com.afollestad.appthemeengine.Config;
-import com.afollestad.appthemeenginesample.prefs.ATEColorPreference;
-import com.afollestad.materialdialogs.color.ColorChooserDialog;
+import com.polaric.appthemeengine.ATE;
+import com.polaric.appthemeengine.ATEActivity;
+import com.polaric.appthemeengine.Config;
+import com.polaric.appthemeenginesample.prefs.ATEColorPreference;
+import com.polaric.materialdialogs.color.ColorChooserDialog;
 
 /**
- * @author Aidan Follestad (afollestad)
+ * @author Aidan Follestad (polaric)
  */
 @SuppressLint("NewApi")
 public class SettingsActivity extends ATEActivity implements ColorChooserDialog.ColorCallback {

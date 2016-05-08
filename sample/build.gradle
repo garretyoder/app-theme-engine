@@ -17,7 +17,7 @@ android {
         abortOnError false
     }
     defaultConfig {
-        applicationId "com.afollestad.appthemeenginesample"
+        applicationId "com.polaric.appthemeenginesample"
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
@@ -33,10 +33,10 @@ android {
 
 dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
-    compile('com.github.afollestad.material-dialogs:core:0.8.5.3@aar') {
+    compile('com.github.polaric.material-dialogs:core:0.8.5.3@aar') {
         transitive = true
     }
-    compile('com.github.afollestad.material-dialogs:commons:0.8.5.3@aar') {
+    compile('com.github.polaric.material-dialogs:commons:0.8.5.3@aar') {
         transitive = true
     }
     compile 'com.android.support:design:23.1.1'

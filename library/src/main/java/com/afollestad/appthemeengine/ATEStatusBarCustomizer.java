@@ -1,9 +1,9 @@
-package com.afollestad.appthemeengine;
+package com.polaric.appthemeengine;
 
 import android.support.annotation.ColorInt;
 
 /**
- * @author Aidan Follestad (afollestad)
+ * @author Aidan Follestad (polaric)
  */
 public interface ATEStatusBarCustomizer {
 

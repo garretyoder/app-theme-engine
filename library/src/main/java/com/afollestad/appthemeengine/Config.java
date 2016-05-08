@@ -1,4 +1,4 @@
-package com.afollestad.appthemeengine;
+package com.polaric.appthemeengine;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
@@ -13,11 +13,11 @@ import android.support.v4.content.ContextCompat;
 import android.view.View;
 
 /**
- * @author Aidan Follestad (afollestad)
+ * @author Aidan Follestad (polaric)
  */
 public final class Config {
 
-    private final static String CONFIG_PREFS_KEY = "[[afollestad_app-theme-engine]]";
+    private final static String CONFIG_PREFS_KEY = "[[polaric_app-theme-engine]]";
     private final static String IS_CONFIGURED_KEY = "is_configured";
     protected final static String VALUES_CHANGED = "values_changed";
 

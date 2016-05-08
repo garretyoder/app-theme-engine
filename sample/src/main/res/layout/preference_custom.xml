@@ -8,7 +8,7 @@
     android:paddingRight="16dp"
     tools:ignore="RtlSymmetry">
 
-    <com.afollestad.appthemeenginesample.prefs.BorderCircleView
+    <com.polaric.appthemeenginesample.prefs.BorderCircleView
         android:id="@+id/circle"
         android:layout_width="32dp"
         android:layout_height="32dp"

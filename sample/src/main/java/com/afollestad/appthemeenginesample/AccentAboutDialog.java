@@ -1,4 +1,4 @@
-package com.afollestad.appthemeenginesample;
+package com.polaric.appthemeenginesample;
 
 import android.app.Activity;
 import android.app.Dialog;
@@ -8,11 +8,11 @@ import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Html;
 
-import com.afollestad.appthemeengine.Config;
-import com.afollestad.materialdialogs.MaterialDialog;
+import com.polaric.appthemeengine.Config;
+import com.polaric.materialdialogs.MaterialDialog;
 
 /**
- * @author Aidan Follestad (afollestad)
+ * @author Aidan Follestad (polaric)
  */
 public class AccentAboutDialog extends DialogFragment {
 

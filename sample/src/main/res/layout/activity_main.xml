@@ -38,14 +38,14 @@
                 android:paddingTop="@dimen/content_inset"
                 tools:ignore="UnusedAttribute">
 
-                <com.afollestad.appthemeengine.views.ATEPrimaryTextView
+                <com.polaric.appthemeengine.views.ATEPrimaryTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="sans-serif-medium"
                     android:text="@string/header"
                     android:textSize="@dimen/header_text_size" />
 
-                <com.afollestad.appthemeengine.views.ATESecondaryTextView
+                <com.polaric.appthemeengine.views.ATESecondaryTextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/content_inset"
@@ -55,35 +55,35 @@
                     android:text="@string/lorem_ipsum"
                     android:textSize="@dimen/body_text_size" />
 
-                <com.afollestad.appthemeengine.views.ATECheckBox
+                <com.polaric.appthemeengine.views.ATECheckBox
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/content_inset"
                     android:checked="true"
                     android:text="@string/checkbox" />
 
-                <com.afollestad.appthemeengine.views.ATERadioButton
+                <com.polaric.appthemeengine.views.ATERadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/content_inset"
                     android:checked="true"
                     android:text="@string/radiobutton" />
 
-                <com.afollestad.appthemeengine.views.ATEEditText
+                <com.polaric.appthemeengine.views.ATEEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/content_inset"
                     android:hint="@string/edit_text"
                     android:tag="tint_accent_color" />
 
-                <com.afollestad.appthemeengine.views.ATEProgressBar
+                <com.polaric.appthemeengine.views.ATEProgressBar
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="@dimen/content_inset"
                     android:tag="tint_accent_color" />
 
-                <com.afollestad.appthemeengine.views.ATESeekBar
+                <com.polaric.appthemeengine.views.ATESeekBar
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/content_inset"

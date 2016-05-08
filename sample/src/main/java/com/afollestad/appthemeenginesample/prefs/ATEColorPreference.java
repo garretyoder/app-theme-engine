@@ -1,15 +1,15 @@
-package com.afollestad.appthemeenginesample.prefs;
+package com.polaric.appthemeenginesample.prefs;
 
 import android.content.Context;
 import android.preference.Preference;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.afollestad.appthemeengine.ATE;
-import com.afollestad.appthemeenginesample.R;
+import com.polaric.appthemeengine.ATE;
+import com.polaric.appthemeenginesample.R;
 
 /**
- * @author Aidan Follestad (afollestad)
+ * @author Aidan Follestad (polaric)
  */
 public class ATEColorPreference extends Preference {
 

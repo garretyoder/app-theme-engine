@@ -1,4 +1,4 @@
-package com.afollestad.appthemeenginesample;
+package com.polaric.appthemeenginesample;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -6,10 +6,10 @@ import android.os.Build;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-import com.afollestad.appthemeengine.ATE;
+import com.polaric.appthemeengine.ATE;
 
 /**
- * @author Aidan Follestad (afollestad)
+ * @author Aidan Follestad (polaric)
  */
 public class AccentHeaderView extends FrameLayout {
 

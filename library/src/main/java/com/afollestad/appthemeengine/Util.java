@@ -1,11 +1,11 @@
-package com.afollestad.appthemeengine;
+package com.polaric.appthemeengine;
 
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.support.annotation.AttrRes;
 
 /**
- * @author Aidan Follestad (afollestad)
+ * @author Aidan Follestad (polaric)
  */
 class Util {
 

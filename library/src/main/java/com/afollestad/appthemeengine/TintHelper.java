@@ -1,4 +1,4 @@
-package com.afollestad.appthemeengine;
+package com.polaric.appthemeengine;
 
 import android.content.Context;
 import android.content.res.ColorStateList;
@@ -19,7 +19,7 @@ import android.widget.RadioButton;
 import android.widget.SeekBar;
 
 /**
- * https://raw.githubusercontent.com/afollestad/material-dialogs/master/core/src/main/java/com/afollestad/materialdialogs/internal/MDTintHelper.java
+ * https://raw.githubusercontent.com/polaric/material-dialogs/master/core/src/main/java/com/polaric/materialdialogs/internal/MDTintHelper.java
  */
 class TintHelper {
 

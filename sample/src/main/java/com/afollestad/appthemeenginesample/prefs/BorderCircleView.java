@@ -1,4 +1,4 @@
-package com.afollestad.appthemeenginesample.prefs;
+package com.polaric.appthemeenginesample.prefs;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -11,7 +11,7 @@ import android.graphics.PorterDuffColorFilter;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
 
-import com.afollestad.appthemeenginesample.R;
+import com.polaric.appthemeenginesample.R;
 
 public class BorderCircleView extends FrameLayout {
 
