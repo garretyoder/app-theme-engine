@@ -52,7 +52,6 @@ Only use this library if you intend to give the user the ability to change the c
 # Gradle Dependency
 
 [![Release](https://jitpack.io/v/garretyoder/app-theme-engine.svg)](https://jitpack.io/#garretyoder/app-theme-engine)
-[![Build Status](https://travis-ci.org/garretyoder/app-theme-engine.svg)](https://travis-ci.org/garretyoder/app-theme-engine)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 #### Repository
@@ -75,7 +74,7 @@ Add this to your module's `build.gradle` file (make sure the version matches the
 ```gradle
 dependencies {
 	...
-	compile('com.github.garretyoder:app-theme-engine:1.0.0@aar') {
+	compile('com.github.garretyoder:app-theme-engine:1.5') {
 		transitive = true
 	}
 }
