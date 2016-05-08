@@ -3,40 +3,40 @@
 App Theme Engine is a library that makes it easy for developers to implement a theme system in 
 their apps.
 
-A fork of afollestad's App theme engine, because he removed the repo. This repo will remain with Jitpack builds.
+A fork of garretyoder's App theme engine, because he removed the repo. This repo will remain with Jitpack builds.
 
 ---
 
 # Table of Contents
 
-1. [Gradle Dependency](https://github.com/afollestad/app-theme-engine#gradle-dependency)
-    1. [Repository](https://github.com/afollestad/app-theme-engine#repository)
-    2. [Dependency](https://github.com/afollestad/app-theme-engine#dependency)
-2. [Applying](https://github.com/afollestad/app-theme-engine#applying)
-    1. [ATEActivity](https://github.com/afollestad/app-theme-engine#ateactivity)
-    2. [Custom Activities and Fragments](https://github.com/afollestad/app-theme-engine#custom-activities-and-fragments)
-    3. [Task Description (Recents)](https://github.com/afollestad/app-theme-engine#task-description-recents)
-    4. [Overflow Menu Widgets](https://github.com/afollestad/app-theme-engine#overflow-menu-widgets)
-    5. [Lists](https://github.com/afollestad/app-theme-engine#lists)
-    6. [Navigation Drawers](https://github.com/afollestad/app-theme-engine#navigation-drawers)
-2. [Config](https://github.com/afollestad/app-theme-engine#config)
-    1. [Modifiers](https://github.com/afollestad/app-theme-engine#modifiers)
-    2. [Default Configuration](https://github.com/afollestad/app-theme-engine#default-configuration)
-    3. [Value Retrieval](https://github.com/afollestad/app-theme-engine#value-retrieval)
-    4. [ATEStatusBarCustomizer](https://github.com/afollestad/app-theme-engine#atestatusbarcustomizer)
-3. [Tags](https://github.com/afollestad/app-theme-engine#tags)
-    1. [Background Colors](https://github.com/afollestad/app-theme-engine#background-colors) 
-    2. [Text Colors](https://github.com/afollestad/app-theme-engine#text-colors)
-    3. [Text Link Colors](https://github.com/afollestad/app-theme-engine#text-link-colors)
-    3. [Tint Colors](https://github.com/afollestad/app-theme-engine#tint-colors)
-4. [Pre-made Views](https://github.com/afollestad/app-theme-engine#pre-made-views)
+1. [Gradle Dependency](https://github.com/garretyoder/app-theme-engine#gradle-dependency)
+    1. [Repository](https://github.com/garretyoder/app-theme-engine#repository)
+    2. [Dependency](https://github.com/garretyoder/app-theme-engine#dependency)
+2. [Applying](https://github.com/garretyoder/app-theme-engine#applying)
+    1. [ATEActivity](https://github.com/garretyoder/app-theme-engine#ateactivity)
+    2. [Custom Activities and Fragments](https://github.com/garretyoder/app-theme-engine#custom-activities-and-fragments)
+    3. [Task Description (Recents)](https://github.com/garretyoder/app-theme-engine#task-description-recents)
+    4. [Overflow Menu Widgets](https://github.com/garretyoder/app-theme-engine#overflow-menu-widgets)
+    5. [Lists](https://github.com/garretyoder/app-theme-engine#lists)
+    6. [Navigation Drawers](https://github.com/garretyoder/app-theme-engine#navigation-drawers)
+2. [Config](https://github.com/garretyoder/app-theme-engine#config)
+    1. [Modifiers](https://github.com/garretyoder/app-theme-engine#modifiers)
+    2. [Default Configuration](https://github.com/garretyoder/app-theme-engine#default-configuration)
+    3. [Value Retrieval](https://github.com/garretyoder/app-theme-engine#value-retrieval)
+    4. [ATEStatusBarCustomizer](https://github.com/garretyoder/app-theme-engine#atestatusbarcustomizer)
+3. [Tags](https://github.com/garretyoder/app-theme-engine#tags)
+    1. [Background Colors](https://github.com/garretyoder/app-theme-engine#background-colors) 
+    2. [Text Colors](https://github.com/garretyoder/app-theme-engine#text-colors)
+    3. [Text Link Colors](https://github.com/garretyoder/app-theme-engine#text-link-colors)
+    3. [Tint Colors](https://github.com/garretyoder/app-theme-engine#tint-colors)
+4. [Pre-made Views](https://github.com/garretyoder/app-theme-engine#pre-made-views)
 
 ---
 
 # Gradle Dependency
 
-[ ![JitPack](https://img.shields.io/github/release/afollestad/app-theme-engine.svg?label=jitpack) ](https://jitpack.io/#afollestad/app-theme-engine)
-[![Build Status](https://travis-ci.org/afollestad/app-theme-engine.svg)](https://travis-ci.org/afollestad/app-theme-engine)
+[ ![JitPack](https://img.shields.io/github/release/garretyoder/app-theme-engine.svg?label=jitpack) ](https://jitpack.io/#garretyoder/app-theme-engine)
+[![Build Status](https://travis-ci.org/garretyoder/app-theme-engine.svg)](https://travis-ci.org/garretyoder/app-theme-engine)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 #### Repository
@@ -59,7 +59,7 @@ Add this to your module's `build.gradle` file:
 ```gradle
 dependencies {
 	...
-	compile('com.github.afollestad:app-theme-engine:0.2.1') {
+	compile('com.github.garretyoder:app-theme-engine:0.2.1') {
 		transitive = true
 	}
 }
