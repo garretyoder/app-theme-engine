@@ -36,7 +36,6 @@ A fork of afollestad's App theme engine, because he removed the repo. This repo 
 # Gradle Dependency
 
 [ ![JitPack](https://img.shields.io/github/release/garretyoder/app-theme-engine.svg?label=jitpack) ](https://jitpack.io/#garretyoder/app-theme-engine)
-[![Build Status](https://travis-ci.org/garretyoder/app-theme-engine.svg)](https://travis-ci.org/garretyoder/app-theme-engine)
 [![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg?style=flat-square)](https://www.apache.org/licenses/LICENSE-2.0.html)
 
 #### Repository
