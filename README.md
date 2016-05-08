@@ -58,7 +58,7 @@ Add this to your module's `build.gradle` file:
 ```gradle
 dependencies {
 	...
-	compile('com.github.garretyoder:app-theme-engine:0.2.1') {
+	compile('com.github.garretyoder:app-theme-engine:1.5') {
 		transitive = true
 	}
 }
