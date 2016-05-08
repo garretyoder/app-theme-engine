@@ -1,10 +1,9 @@
-# App Theme Engine (BETA)
+# App Theme Engine 
 
 App Theme Engine is a library that makes it easy for developers to implement a theme system in 
-their apps, similar to what's seen in [Cabinet](https://play.google.com/store/apps/details?id=com.afollestad.cabinet) 
-and [Impression](https://github.com/afollestad/impression).
+their apps.
 
-Download the [latest sample APK](https://github.com/afollestad/app-theme-engine/raw/master/sample/Sample.apk) to check it out! 
+A fork of afollestad's App theme engine, because he removed the repo. This repo will remain with Jitpack builds.
 
 ---
 
