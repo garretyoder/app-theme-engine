@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:elevation="0dp"
+        android:tag="background|primary_color"
+        app:popupTheme="?toolbar_popup_theme"
+        tools:ignore="UnusedAttribute">
+
+        <android.support.v7.widget.AppCompatSpinner
+            android:id="@+id/toolbarSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="156dp"
+            android:tag="tint|parent_dependent" />
+
+    </android.support.v7.widget.Toolbar>
+
+    <fragment
+        android:id="@+id/frag"
+        android:name="com.afollestad.appthemeenginesample.misc.MiscFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_misc" />
+
+</LinearLayout>

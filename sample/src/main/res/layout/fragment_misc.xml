@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/content_inset"
+        android:layout_weight="1"
+        android:elevation="@dimen/toolbar_elevation"
+        android:orientation="vertical"
+        android:tag="background|primary_color"
+        tools:ignore="UnusedAttribute">
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/content_inset">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/text_input_layout"
+                android:tag="text_color_hint|primary_text,tint|accent_color" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="@dimen/content_inset"
+            android:minHeight="96dp"
+            android:tag="background|accent_color">
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/content_inset"
+                android:layout_marginRight="@dimen/content_inset"
+                android:hint="@string/regular_input"
+                android:tag="tint|accent_color_dependent,text_color|accent_color_dependent,text_color_hint|accent_color_dependent" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/content_inset"
+        android:layout_weight="3">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/content_inset"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:tag="text_color|accent_color,text_size|display1"
+            android:text="@string/fragment_theming"
+            tools:ignore="UnusedAttribute" />
+
+    </FrameLayout>
+
+</LinearLayout>

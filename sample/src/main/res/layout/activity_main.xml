@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout android:id="@+id/drawer_layout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:ignore="UnusedAttribute">
+
+    <LinearLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/appbar_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?actionBarSize"
+            android:elevation="@dimen/toolbar_elevation"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:contentInsetStart="@dimen/content_inset"
+            app:popupTheme="?toolbar_popup_theme" />
+
+        <FrameLayout
+            android:id="@+id/appbar_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ScrollView
+                android:id="@+id/main_scroll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <LinearLayout
+                    android:id="@+id/scroll_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:orientation="vertical"
+                    android:padding="@dimen/content_inset"
+                    tools:ignore="UnusedAttribute">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="sans-serif-medium"
+                        android:tag="text_color|window_bg_dependent,text_size|headline,font|RobotoSlab-Bold.ttf"
+                        android:text="@string/header" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/content_inset_half"
+                        android:layout_marginTop="@dimen/content_inset"
+                        android:fontFamily="sans-serif-light"
+                        android:lineSpacingMultiplier="1.5"
+                        android:tag="text_color|secondary_text,text_size|body"
+                        android:text="@string/lorem_ipsum" />
+
+                    <CheckBox
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/content_inset"
+                        android:checked="true"
+                        android:tag="tint|accent_color,text_color|primary_text,text_size|body"
+                        android:text="@string/checkbox" />
+
+                    <android.support.v7.widget.SwitchCompat
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/content_inset"
+                        android:checked="true"
+                        android:tag="tint|accent_color,text_color|primary_text,text_size|body"
+                        android:text="@string/switchViewCompat" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/content_inset"
+                        android:checked="true"
+                        android:enabled="true"
+                        android:tag="tint|accent_color,text_color|primary_text,text_size|body"
+                        android:text="@string/radiobutton" />
+
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/content_inset"
+                        android:hint="@string/edit_text"
+                        android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+                    <ProgressBar
+                        android:id="@+id/progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="@dimen/content_inset"
+                        android:tag="tint|accent_color" />
+
+                    <SeekBar
+                        android:id="@+id/seek"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/content_inset"
+                        android:max="100"
+                        android:progress="60"
+                        android:tag="tint|accent_color" />
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="@dimen/content_inset"
+                        android:clickable="true"
+                        android:tag="tint_selector_lighter|accent_color,text_size|body"
+                        android:text="@string/button" />
+
+                </LinearLayout>
+
+            </ScrollView>
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|end"
+                android:layout_margin="@dimen/content_inset"
+                android:clickable="true"
+                android:src="@drawable/ic_add"
+                app:elevation="6dp"
+                app:pressedTranslationZ="12dp" />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:headerLayout="@layout/drawer_header"
+        app:menu="@menu/drawer" />
+
+</android.support.v4.widget.DrawerLayout>

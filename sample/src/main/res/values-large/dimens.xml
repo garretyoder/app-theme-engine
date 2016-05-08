@@ -1,0 +1,6 @@
+<resources>
+
+    <dimen name="content_inset">24dp</dimen>
+    <dimen name="content_inset_half">12dp</dimen>
+
+</resources>

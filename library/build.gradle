@@ -11,7 +11,7 @@ android {
         minSdkVersion 14
         targetSdkVersion 23
         versionCode 1
-        versionName "0.2.1"
+        versionName "1.0.0"
     }
     buildTypes {
         release {
@@ -24,4 +24,10 @@ android {
 dependencies {
     compile 'com.android.support:appcompat-v7:23.1.1'
     compile 'com.android.support:design:23.1.1'
+
+    provided 'com.android.support:cardview-v7:23.1.1'
+
+    // Used for the preference classes
+    provided 'com.github.afollestad.material-dialogs:core:0.8.5.4@aar'
+    provided 'com.github.afollestad.material-dialogs:commons:0.8.5.4@aar'
 }

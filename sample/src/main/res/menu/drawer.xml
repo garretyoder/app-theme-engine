@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/topGroup"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/drawer_home"
+            android:checkable="true"
+            android:checked="true"
+            android:icon="@drawable/ic_home"
+            android:title="@string/drawer_home" />
+
+        <item
+            android:id="@+id/drawer_tabs"
+            android:checkable="false"
+            android:icon="@drawable/ic_tabs"
+            android:title="@string/drawer_tablayout" />
+
+        <item
+            android:id="@+id/drawer_recyclerview"
+            android:checkable="false"
+            android:icon="@drawable/ic_list"
+            android:title="@string/drawer_recyclerview" />
+
+        <item
+            android:id="@+id/drawer_collapsingtoolbar"
+            android:checkable="false"
+            android:icon="@drawable/ic_collapsingtoolbar"
+            android:title="@string/drawer_collapsingtoolbar" />
+
+        <item
+            android:id="@+id/drawer_widgets"
+            android:checkable="false"
+            android:icon="@drawable/ic_checkbox_marked"
+            android:title="@string/drawer_widgets" />
+
+        <item
+            android:id="@+id/drawer_misc"
+            android:checkable="false"
+            android:icon="@drawable/ic_bug"
+            android:title="@string/drawer_misc" />
+
+    </group>
+
+    <group
+        android:id="@+id/bottomGroup"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/drawer_settings"
+            android:checkable="false"
+            android:icon="@drawable/ic_settings"
+            android:title="@string/drawer_settings" />
+
+        <item
+            android:id="@+id/drawer_about"
+            android:checkable="false"
+            android:icon="@drawable/ic_info"
+            android:title="@string/drawer_about" />
+
+    </group>
+
+</menu>

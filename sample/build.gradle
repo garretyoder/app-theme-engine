@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    // Note-to-self: sample uses Cabinet's keystore
+
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            output.outputFile = new File(
+                    output.outputFile.parent, "Sample.apk")
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    defaultConfig {
+        applicationId "com.afollestad.appthemeenginesample"
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 3
+        versionName "1.0.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:23.1.1'
+    compile('com.github.afollestad.material-dialogs:core:0.8.5.4@aar') {
+        transitive = true
+    }
+    compile('com.github.afollestad.material-dialogs:commons:0.8.5.4@aar') {
+        transitive = true
+    }
+    compile 'com.android.support:design:23.1.1'
+    compile project(path: ':library')
+}

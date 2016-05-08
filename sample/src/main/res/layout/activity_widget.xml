@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:descendantFocusability="beforeDescendants"
+    android:focusableInTouchMode="true"
+    tools:context="com.afollestad.appthemeenginesample.widgets.WidgetActivity">
+
+    <ScrollView
+        android:id="@+id/main_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/scroll_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:orientation="vertical"
+            android:padding="@dimen/content_inset"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            tools:ignore="UnusedAttribute">
+
+            <TextView
+                android:layout_margin="@dimen/content_inset_half"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/checkbox" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:checked="true"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:checked="false"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_margin="@dimen/content_inset_half"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/switchView" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:checked="true"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:checked="false"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+                <Switch
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_margin="@dimen/content_inset_half"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/switchViewCompat" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:checked="true"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:checked="false"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+                <android.support.v7.widget.SwitchCompat
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_margin="@dimen/content_inset_half"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radiobutton" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:checked="true"
+                    android:enabled="true"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:checked="false"
+                    android:enabled="true"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:checked="true"
+                    android:enabled="false"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:hint="@string/edit_text"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+                <EditText
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:enabled="false"
+                    android:hint="@string/edit_text"
+                    android:tag="tint|accent_color,text_color|primary_text,text_size|body" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:clickable="true"
+                    android:tag="tint_selector_lighter|accent_color,text_size|body"
+                    android:text="@string/button"
+                    tools:ignore="ButtonStyle" />
+
+                <Button
+                    android:layout_weight="1"
+                    android:id="@+id/button_disabled"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/content_inset_half"
+                    android:clickable="true"
+                    android:enabled="false"
+                    android:tag="tint_selector_lighter|accent_color,text_size|body"
+                    android:text="@string/button"
+                    tools:ignore="ButtonStyle" />
+
+            </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/content_inset_half"
+                android:tag="tint|accent_color" />
+
+            <SeekBar
+                android:id="@+id/seek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/content_inset_half"
+                android:max="100"
+                android:progress="60"
+                android:tag="tint|accent_color" />
+
+            <SeekBar
+                android:id="@+id/seek_disabled"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/content_inset_half"
+                android:max="100"
+                android:progress="60"
+                android:tag="tint|accent_color" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="72dp"
+    android:gravity="center_vertical"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/content_inset"
+    android:paddingRight="@dimen/content_inset"
+    tools:ignore="UnusedAttribute">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:tag="text_color|accent_color,font|RobotoSlab-Bold.ttf,text_size|subheading"
+        tools:text="Primary Text" />
+
+    <TextView
+        android:id="@+id/subtitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif"
+        android:tag="text_color|secondary_text,text_size|body"
+        tools:text="Secondary Text" />
+
+</LinearLayout>

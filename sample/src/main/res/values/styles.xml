@@ -1,0 +1,23 @@
+<resources>
+
+    <style name="AppTheme.ActionBar" parent="Theme.AppCompat.Light">
+        <item name="ate_key">light_theme</item>
+        <item name="toolbar_popup_theme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="ate_key">light_theme</item>
+        <item name="toolbar_popup_theme">@style/ThemeOverlay.AppCompat.Light</item>
+    </style>
+
+    <style name="AppThemeDark.ActionBar" parent="Theme.AppCompat">
+        <item name="ate_key">dark_theme</item>
+        <item name="toolbar_popup_theme">@style/ThemeOverlay.AppCompat</item>
+    </style>
+
+    <style name="AppThemeDark" parent="Theme.AppCompat.NoActionBar">
+        <item name="ate_key">dark_theme</item>
+        <item name="toolbar_popup_theme">@style/ThemeOverlay.AppCompat</item>
+    </style>
+
+</resources>
