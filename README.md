@@ -666,7 +666,7 @@ You can specify config keys through your XML. For an example, you can use a
 theme attribute set from your Activity theme, which specifies a string (see the sample project):
 
 ```xml
-<com.garretyoder.appthemeengine.prefs.ATEColorPreference
+<com.afollestad.appthemeengine.prefs.ATEColorPreference
         android:key="primary_color"
         android:persistent="false"
         android:summary="@string/primary_color_summary"
