@@ -3,7 +3,7 @@
 App Theme Engine is a library that makes it easy for developers to implement a theme system in 
 their apps.
 
-A fork of garretyoder's App theme engine, because he removed the repo. This repo will remain with Jitpack builds.
+A fork of afollestad's App theme engine, because he removed the repo. This repo will remain with Jitpack builds.
 
 ---
 
