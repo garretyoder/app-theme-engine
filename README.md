@@ -1,9 +1,10 @@
+#Discontinued
+afollestad, app-theme-engine's developer took the repo down for the project when he discontinued it. Many apps still depend on it, so I kept my fork up as a mirror. However, I recommend using my own Colorful library as a better alternative that is not out of support. https://github.com/garretyoder/Colorful
+
 # App Theme Engine
 
 App Theme Engine is a library that makes it easy for developers to implement a theme system in 
 their apps.
-
-This is a fork of afollestad's App-Theme-Engine, since he took down the repo. This way I and everyone else who used the library can still use it.
 
 ![Showcase](https://raw.githubusercontent.com/garretyoder/app-theme-engine/master/art/showcase.png)
 
