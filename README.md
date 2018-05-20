@@ -1,4 +1,5 @@
-#Discontinued
+# Discontinued
+
 afollestad, app-theme-engine's developer took the repo down for the project when he discontinued it. Many apps still depend on it, so I kept my fork up as a mirror. However, I recommend using my own Colorful library as a better alternative that is not out of support. https://github.com/garretyoder/Colorful
 
 # App Theme Engine
